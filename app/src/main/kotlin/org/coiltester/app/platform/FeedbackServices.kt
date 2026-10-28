@@ -13,6 +13,7 @@ class HapticService(private val context: Context) {
 
     private val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
+    @Suppress("UnusedParameter")
     fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
@@ -60,6 +61,7 @@ class SoundService(private val context: Context) {
     @Volatile
     var volume: Float = 1.0f
 
+    @Suppress("TooGenericExceptionCaught")
     private fun play(resId: Int) {
         if (!enabled) return
         try {

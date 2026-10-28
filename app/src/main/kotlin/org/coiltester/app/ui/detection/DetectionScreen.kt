@@ -28,6 +28,7 @@ import org.coiltester.app.viewmodel.DetectionViewModel
 import org.coiltester.core.model.DetectionStatus
 
 @Composable
+@Suppress("UnusedParameter")
 fun DetectionScreen(
     viewModel: DetectionViewModel,
     onNavigate: (AppRoute) -> Unit,

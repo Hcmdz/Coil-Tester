@@ -1,5 +1,6 @@
 package org.coiltester.app.viewmodel
 
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -110,6 +111,7 @@ sealed interface SettingsIntent {
     data class InjectTestDc(val dcMagnitude: Double) : SettingsIntent
 }
 
+@Immutable
 data class SettingsState(
     val settings: AppSettings = AppSettings(),
     val availableLanguages: List<LanguageOption> =
@@ -120,4 +122,5 @@ data class SettingsState(
         ),
 )
 
+@Immutable
 data class LanguageOption(val code: String, val label: String)

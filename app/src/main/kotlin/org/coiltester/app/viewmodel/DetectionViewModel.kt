@@ -1,5 +1,6 @@
 package org.coiltester.app.viewmodel
 
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
@@ -239,6 +240,7 @@ sealed interface DetectionIntent {
     data class ToggleDistanceGuide(val enabled: Boolean) : DetectionIntent
 }
 
+@Immutable
 data class DetectionState(
     val status: DetectionStatus = DetectionStatus.IDLE,
     val fieldReading: MagneticFieldReading? = null,

@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
         super.attachBaseContext(updateBaseContextLocale(newBase))
     }
 
+    @Suppress("TooGenericExceptionCaught", "SwallowedException")
     private fun updateBaseContextLocale(context: Context): Context {
         // Read language from DataStore synchronously (blocking is OK here as it's small)
         val language =

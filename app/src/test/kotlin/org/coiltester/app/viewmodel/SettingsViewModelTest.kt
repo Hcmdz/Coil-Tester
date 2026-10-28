@@ -56,7 +56,9 @@ class FakeSensorProvider : DetectionRepository {
     override fun injectTestReading(
         acMagnitude: Double,
         dcMagnitude: Double,
-    ) { }
+    ) {
+        // no-op
+    }
 
     override fun setTestMode(enabled: Boolean) { }
 }

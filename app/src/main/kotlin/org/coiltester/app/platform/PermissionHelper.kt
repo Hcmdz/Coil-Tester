@@ -7,6 +7,7 @@ import org.coiltester.core.model.Result
 /**
  * Runtime permission helper for sensor access (simplified)
  */
+@Suppress("FunctionOnlyReturningConstant", "UnusedPrivateProperty")
 class PermissionHelper(private val activity: Activity) {
     fun hasSensorPermission(): Boolean = true
 

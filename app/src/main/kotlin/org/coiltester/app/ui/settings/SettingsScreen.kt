@@ -252,6 +252,7 @@ fun ThemeDialog(
 }
 
 @Composable
+@Suppress("UnusedParameter")
 fun SettingsScreen(
     viewModel: SettingsViewModel,
     onNavigate: (AppRoute) -> Unit,
