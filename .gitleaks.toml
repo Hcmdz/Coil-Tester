@@ -9,6 +9,14 @@ id = "android-keystore-password"
 regex = '''(?i)(storePassword|keyPassword|keystore.*password)\s*[=:]\s*["\']?([^\s"\']+)["\']?'''
 tags = ["password", "keystore"]
 
+[allowlist]
+paths = [
+  '''\.github/workflows/.*\.yml''',
+]
+regexes = [
+  '''\$\{\{.*\}\}''',
+]
+
 [[rules]]
 description = "Google Services API Key"
 id = "google-api-key"

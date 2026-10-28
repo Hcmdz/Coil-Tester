@@ -34,3 +34,10 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Generic / tooling
+*.mobileprovision
+dist/
+node_modules/
+__pycache__/
+.vscode/

@@ -1,0 +1,57 @@
+name: validate
+
+# Secret-gate CI. Required for an ALLOW verdict: when the audit reports
+# `secret-gate` missing, propose this file (add the secret-gate job instead
+# when a workflow already exists). All Actions pinned by SHA with readable
+# version comments (no mutable tags). Reading the patterns from
+# .github/secret-patterns.txt keeps one source of truth shared with the audit
+# engine and the local pre-push hook, instead of a copy that drifts.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: No secret values in tree
+        run: |
+          # Patterns live in .github/secret-patterns.txt (one regex per line,
+          # '#' comments ignored) so the CI gate, the audit engine and the
+          # pre-push hook cannot drift apart. Reviewed false positives live in
+          # .github/secret-allowlist.txt (exact fixed strings, starts empty).
+          # Anything else FAILS.
+          PATS=$(grep -v '^#' .github/secret-patterns.txt | grep -v '^$' | paste -sd'|')
+          test -n "$PATS"
+          ! grep -rEnI "$PATS" \
+            --include="*.md" --include="*.json" --include="*.jsonc" --include="*.sh" --include="*.py" --include="*.kt" --include="*.ts" --include="*.html" --include="*.css" --include="*.js" --include="*.yml" --include="*.yaml" . \
+            | grep -vF -f .github/secret-allowlist.txt \
+            | grep -q .
+          echo "secret scan clean"
+      - name: No sensitive filenames tracked
+        run: |
+          NAMES=$(grep -v '^#' .github/sensitive-filenames.txt | grep -v '^$' | paste -sd'|')
+          test -n "$NAMES"
+          ! git ls-files \
+            | grep -E "$NAMES" \
+            | grep -q .
+          echo "filenames clean"
+      - name: Allowlist entries still needed
+        run: |
+          # Every allowlist entry must match >=1 tree file (excluding itself),
+          # or it is dead weight to remove.
+          fail=0
+          grep -v '^#' .github/secret-allowlist.txt | grep -v '^$' | while IFS= read -r pat; do
+            [ -n "$pat" ] || continue
+            if ! grep -rFq -- "$pat" --exclude-dir=.git --exclude=secret-allowlist.txt . ; then
+              echo "DEAD allowlist entry: $pat"; exit 1
+            fi
+          done || fail=1
+          [ $fail -eq 0 ] && echo "allowlist needed"
