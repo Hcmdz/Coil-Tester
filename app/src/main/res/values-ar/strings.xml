@@ -49,6 +49,8 @@
     <string name="settings_reset_calibration_subtitle">مسح بيانات معايرة المستشعر</string>
     <string name="settings_about">حول</string>
     <string name="settings_about_subtitle">معلومات الإصدار والتراخيص</string>
+    <string name="settings_privacy">سياسة الخصوصية</string>
+    <string name="settings_terms">شروط الخدمة</string>
 
     <!-- Sensitivity -->
     <string name="sensitivity_low">منخفض</string>

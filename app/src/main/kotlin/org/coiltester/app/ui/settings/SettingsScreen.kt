@@ -1,6 +1,8 @@
 package org.coiltester.app.ui.settings
 
 import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -59,6 +61,21 @@ import org.coiltester.core.model.ThemeMode
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+
+import android.content.ActivityNotFoundException
+
+@Suppress("SwallowedException")
+fun rememberOpenUrl(context: android.content.Context): (String) -> Unit {
+    return { url: String ->
+        try {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            // Intentionally ignored - no browser available to handle the intent
+        }
+    }
+}
 
 @Composable
 fun SettingItem(
@@ -263,6 +280,7 @@ fun SettingsScreen(
 
     val context = LocalContext.current
     val soundService = remember { SoundService(context) }
+    val openUrl = rememberOpenUrl(context)
     LaunchedEffect(settings.soundVolume) {
         soundService.volume = settings.soundVolume
     }
@@ -685,8 +703,18 @@ fun SettingsScreen(
                 )
                 SettingItem(
                     title = "Source",
-                    subtitle = "github.com/HcmDz/CoilTester",
-                    onClick = {},
+                    subtitle = "github.com/Hcmdz/Coil-Tester",
+                    onClick = { openUrl("https://github.com/Hcmdz/Coil-Tester") },
+                )
+                SettingItem(
+                    title = stringResource(org.coiltester.app.R.string.settings_privacy),
+                    subtitle = "hcmdz.github.io/coil-tester/privacy/",
+                    onClick = { openUrl("https://hcmdz.github.io/coil-tester/privacy/") },
+                )
+                SettingItem(
+                    title = stringResource(org.coiltester.app.R.string.settings_terms),
+                    subtitle = "hcmdz.github.io/coil-tester/terms/",
+                    onClick = { openUrl("https://hcmdz.github.io/coil-tester/terms/") },
                 )
             }
         }
