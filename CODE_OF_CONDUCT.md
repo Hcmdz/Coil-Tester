@@ -131,7 +131,7 @@ If you experience or witness behavior that violates this Code of Conduct, please
 
 Reports should be made in good faith and should include enough information to allow the maintainers to understand and investigate the situation.
 
-**Contact:** <maintainer email / reporting channel>
+**Contact:** [HcmDz.Dev@gmail.com]
 
 Reports will be reviewed as promptly and fairly as reasonably possible.
 
