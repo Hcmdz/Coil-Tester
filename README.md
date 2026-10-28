@@ -2,6 +2,8 @@
 
 <a id="readme-top"></a>
 
+[![CoilTester Banner](docs/assets/social-preview.png)](https://github.com/HcmDz/Coil_Tester/releases/latest)
+
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg?logo=android)](https://www.android.com)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-purple.svg?logo=kotlin)](https://kotlinlang.org)
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](#)
