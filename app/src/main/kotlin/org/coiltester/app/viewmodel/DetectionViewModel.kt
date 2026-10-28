@@ -1,21 +1,19 @@
 package org.coiltester.app.viewmodel
 
+import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
-
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.coiltester.core.model.*
 import org.coiltester.app.platform.HapticService
 import org.coiltester.app.platform.SoundService
+import org.coiltester.core.model.*
 import org.coiltester.core.repository.DetectionRepository
 import org.coiltester.core.repository.SettingsRepository
 import org.coiltester.core.sensor.DetectionEngine
@@ -30,7 +28,7 @@ class DetectionViewModel(
     private val soundService: SoundService,
     private val hapticService: HapticService,
     private val settingsRepository: SettingsRepository,
-    private val scope: CoroutineScope
+    private val scope: CoroutineScope,
 ) : ViewModel() {
     private val intentChannel = Channel<DetectionIntent>(Channel.UNLIMITED)
 
@@ -80,23 +78,34 @@ class DetectionViewModel(
                         val prevStatus = _state.value.status
                         eng.onSensorReading(reading)
                         val er = eng.state.value
-                        _state.update { it.copy(
-                            status = er.status,
-                            fieldReading = er.fieldReading,
-                            detectionType = er.detectionType,
-                            confidence = er.confidence,
-                            config = er.config,
-                            calibration = er.calibration,
-                            calibrationAccuracy = reading.accuracy.toCalibrationAccuracy(),
-                            lastAcMagnitude = er.acRms,
-                            lastDcMagnitude = er.dcMean,
-                            error = er.error
-                        ) }
+                        _state.update {
+                            it.copy(
+                                status = er.status,
+                                fieldReading = er.fieldReading,
+                                detectionType = er.detectionType,
+                                confidence = er.confidence,
+                                config = er.config,
+                                calibration = er.calibration,
+                                calibrationAccuracy = reading.accuracy.toCalibrationAccuracy(),
+                                lastAcMagnitude = er.acRms,
+                                lastDcMagnitude = er.dcMean,
+                                error = er.error,
+                            )
+                        }
                         if (prevStatus != er.status) {
                             when (er.status) {
-                                DetectionStatus.CONFIRMED_AC -> { soundService.playDetectionSound(DetectionType.AC); hapticService.triggerDetectionFeedback(DetectionType.AC) }
-                                DetectionStatus.CONFIRMED_DC -> { soundService.playDetectionSound(DetectionType.DC); hapticService.triggerDetectionFeedback(DetectionType.DC) }
-                                DetectionStatus.ERROR -> { soundService.playErrorSound(); hapticService.triggerErrorFeedback() }
+                                DetectionStatus.CONFIRMED_AC -> {
+                                    soundService.playDetectionSound(DetectionType.AC)
+                                    hapticService.triggerDetectionFeedback(DetectionType.AC)
+                                }
+                                DetectionStatus.CONFIRMED_DC -> {
+                                    soundService.playDetectionSound(DetectionType.DC)
+                                    hapticService.triggerDetectionFeedback(DetectionType.DC)
+                                }
+                                DetectionStatus.ERROR -> {
+                                    soundService.playErrorSound()
+                                    hapticService.triggerErrorFeedback()
+                                }
                                 else -> {}
                             }
                         }
@@ -140,7 +149,12 @@ class DetectionViewModel(
             val result = configureDetectionUseCase()
             result
                 .onOk { _state.update { it.copy(status = DetectionStatus.DETECTING) } }
-                .onErr { error -> _state.update { it.copy(error = null, status = DetectionStatus.ERROR) }; soundService.playErrorSound(); hapticService.triggerErrorFeedback() }
+                .onErr {
+                        error ->
+                    _state.update { it.copy(error = null, status = DetectionStatus.ERROR) }
+                    soundService.playErrorSound()
+                    hapticService.triggerErrorFeedback()
+                }
         }
     }
 
@@ -149,7 +163,18 @@ class DetectionViewModel(
         scope.launch {
             val result = stopDetectionUseCase()
             result
-                .onOk { _state.update { it.copy(status = DetectionStatus.IDLE, fieldReading = null, detectionType = null, confidence = 0.0, lastAcMagnitude = 0.0, lastDcMagnitude = 0.0) } }
+                .onOk {
+                    _state.update {
+                        it.copy(
+                            status = DetectionStatus.IDLE,
+                            fieldReading = null,
+                            detectionType = null,
+                            confidence = 0.0,
+                            lastAcMagnitude = 0.0,
+                            lastDcMagnitude = 0.0,
+                        )
+                    }
+                }
                 .onErr { error -> _state.update { it.copy(error = null) } }
         }
     }
@@ -201,14 +226,21 @@ class DetectionViewModel(
 
 sealed interface DetectionIntent {
     data class Start(val config: DetectionConfig) : DetectionIntent
+
     object Stop : DetectionIntent
+
     object Calibrate : DetectionIntent
+
     data class SetSensitivity(val sensitivity: Sensitivity) : DetectionIntent
+
     data class ToggleHaptic(val enabled: Boolean) : DetectionIntent
+
     data class ToggleSound(val enabled: Boolean) : DetectionIntent
+
     data class ToggleDistanceGuide(val enabled: Boolean) : DetectionIntent
 }
 
+@Immutable
 data class DetectionState(
     val status: DetectionStatus = DetectionStatus.IDLE,
     val fieldReading: MagneticFieldReading? = null,
@@ -219,16 +251,17 @@ data class DetectionState(
     val calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM,
     val lastAcMagnitude: Double = 0.0,
     val lastDcMagnitude: Double = 0.0,
-    val error: DetectionError? = null
+    val error: DetectionError? = null,
 ) {
     val isDetecting: Boolean get() = status != DetectionStatus.IDLE && status != DetectionStatus.ERROR
     val showDistanceGuide: Boolean get() = config.distanceGuideEnabled && status != DetectionStatus.IDLE
 }
 
-private fun Int.toCalibrationAccuracy(): org.coiltester.core.model.CalibrationAccuracy = when (this) {
-    0 -> org.coiltester.core.model.CalibrationAccuracy.UNCALIBRATED
-    1 -> org.coiltester.core.model.CalibrationAccuracy.LOW
-    2 -> org.coiltester.core.model.CalibrationAccuracy.MEDIUM
-    3 -> org.coiltester.core.model.CalibrationAccuracy.HIGH
-    else -> org.coiltester.core.model.CalibrationAccuracy.MEDIUM
-}
+private fun Int.toCalibrationAccuracy(): org.coiltester.core.model.CalibrationAccuracy =
+    when (this) {
+        0 -> org.coiltester.core.model.CalibrationAccuracy.UNCALIBRATED
+        1 -> org.coiltester.core.model.CalibrationAccuracy.LOW
+        2 -> org.coiltester.core.model.CalibrationAccuracy.MEDIUM
+        3 -> org.coiltester.core.model.CalibrationAccuracy.HIGH
+        else -> org.coiltester.core.model.CalibrationAccuracy.MEDIUM
+    }

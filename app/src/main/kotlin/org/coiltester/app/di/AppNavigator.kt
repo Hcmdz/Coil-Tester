@@ -1,6 +1,5 @@
 package org.coiltester.app.di
 
-
 import androidx.navigation.NavController
 
 /**
@@ -36,11 +35,12 @@ sealed interface AppRoute {
 
     data object About : AppRoute
 
-    fun toRouteString(): String = when (this) {
-        is Detection -> "detection"
-        is Settings -> "settings"
-        is About -> "about"
-    }
+    fun toRouteString(): String =
+        when (this) {
+            is Detection -> "detection"
+            is Settings -> "settings"
+            is About -> "about"
+        }
 
     companion object {
         fun fromRouteString(route: String): AppRoute? {

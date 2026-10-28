@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>CyclomaticComplexMethod:DetectionScreen.kt$@Composable @Suppress("UnusedParameter") fun DetectionScreen( viewModel: DetectionViewModel, onNavigate: (AppRoute) -&gt; Unit, )</ID>
+    <ID>CyclomaticComplexMethod:MagneticToolScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun MagneticToolScreen( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
+    <ID>CyclomaticComplexMethod:SettingsScreen.kt$@Composable @Suppress("UnusedParameter") fun SettingsScreen( viewModel: SettingsViewModel, onNavigate: (AppRoute) -&gt; Unit, onBack: () -&gt; Unit = {}, )</ID>
+    <ID>CyclomaticComplexMethod:SettingsViewModel.kt$SettingsViewModel$fun sendIntent(intent: SettingsIntent)</ID>
+    <ID>EmptyFunctionBlock:SettingsViewModelTest.kt$FakeSensorProvider${ }</ID>
+    <ID>LongMethod:DetectionScreen.kt$@Composable @Suppress("UnusedParameter") fun DetectionScreen( viewModel: DetectionViewModel, onNavigate: (AppRoute) -&gt; Unit, )</ID>
+    <ID>LongMethod:MagneticToolScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun MagneticToolScreen( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
+    <ID>LongMethod:Navigation.kt$@Composable fun AppNavHost( navController: NavHostController, detectionViewModel: DetectionViewModel, settingsViewModel: SettingsViewModel, )</ID>
+    <ID>LongMethod:SettingsScreen.kt$@Composable @Suppress("UnusedParameter") fun SettingsScreen( viewModel: SettingsViewModel, onNavigate: (AppRoute) -&gt; Unit, onBack: () -&gt; Unit = {}, )</ID>
+    <ID>LongParameterList:DetectionViewModel.kt$DetectionViewModel$( private val detectionRepository: DetectionRepository, private val configureDetectionUseCase: ConfigureDetectionUseCase, private val stopDetectionUseCase: StopDetectionUseCase, private val calibrationUseCase: CalibrationUseCase, private val setSensitivityUseCase: SetSensitivityUseCase, private val soundService: SoundService, private val hapticService: HapticService, private val settingsRepository: SettingsRepository, private val scope: CoroutineScope, )</ID>
+    <ID>LongParameterList:MagneticToolScreen.kt$( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
+    <ID>LongParameterList:SettingsViewModel.kt$SettingsViewModel$( private val settingsRepository: SettingsRepository, private val setSensitivityUseCase: SetSensitivityUseCase, private val setLanguageUseCase: SetLanguageUseCase, private val setThemeUseCase: SetThemeUseCase, private val setAdvancedOptionsUseCase: SetAdvancedOptionsUseCase, private val setAcThresholdUseCase: SetAcThresholdUseCase, private val setDcThresholdUseCase: SetDcThresholdUseCase, private val setFrequencyBandUseCase: SetFrequencyBandUseCase, private val setSoundVolumeUseCase: SetSoundVolumeUseCase, private val sensorProvider: DetectionRepository, private val scope: kotlinx.coroutines.CoroutineScope, )</ID>
+    <ID>MagicNumber:DetectionScreen.kt$0xFFFFA500</ID>
+    <ID>MagicNumber:MagneticToolScreen.kt$0.7f</ID>
+    <ID>MagicNumber:MagneticToolScreen.kt$0xFFFF3B30</ID>
+    <ID>MagicNumber:Navigation.kt$16</ID>
+    <ID>MagicNumber:Navigation.kt$2.88f</ID>
+    <ID>MagicNumber:Navigation.kt$360f</ID>
+    <ID>MagicNumber:SensorProvider.kt$SensorProvider$20</ID>
+    <ID>MagicNumber:SensorProvider.kt$SensorProvider$64</ID>
+    <ID>MagicNumber:SettingsScreen.kt$0.5</ID>
+    <ID>MagicNumber:SettingsScreen.kt$150.0</ID>
+    <ID>MaxLineLength:DetectionScreen.kt$DetectionStatus.CONFIRMED_AC -&gt; stringResource(org.coiltester.app.R.string.detection_ac_confirmed)</ID>
+    <ID>MaxLineLength:DetectionScreen.kt$DetectionStatus.CONFIRMED_DC -&gt; stringResource(org.coiltester.app.R.string.detection_dc_confirmed)</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$Text("+", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$Text("-", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$onClick = { value = (value + if (isAc) 0.5f else 10f).coerceIn(min.toFloat(), max.toFloat()) }</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$onClick = { value = (value - if (isAc) 0.5f else 10f).coerceIn(min.toFloat(), max.toFloat()) }</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$text = if (isAc) "AC Threshold: ${"%.1f".format(value)} µT" else "DC Threshold: ${value.toInt()} µT"</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$tint = if (hapticEnabled) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant</ID>
+    <ID>MaxLineLength:MagneticToolScreen.kt$tint = if (soundEnabled) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant</ID>
+    <ID>MaxLineLength:MainActivity.kt$MainActivity$val dataStore = org.koin.core.context.GlobalContext.get().get&lt;androidx.datastore.core.DataStore&lt;androidx.datastore.preferences.core.Preferences&gt;&gt;()</ID>
+    <ID>MaxLineLength:Navigation.kt$org.coiltester.app.viewmodel.DetectionIntent.Start(org.coiltester.core.model.DetectionConfig.fromSettings(s))</ID>
+    <ID>MaxLineLength:Navigation.kt$settingsViewModel.sendIntent(org.coiltester.app.viewmodel.SettingsIntent.SetAdvancedOptions(enabled))</ID>
+    <ID>MaxLineLength:SensorProvider.kt$SensorProvider$if (cause != null) trySend(Result.Err(DetectionError.SensorUnavailable("Test injection failed: " + cause.message)))</ID>
+    <ID>TooManyFunctions:DetectionViewModel.kt$DetectionViewModel : ViewModel</ID>
+    <ID>UnusedParameter:PermissionHelper.kt$PermissionHelper$rateHz: Int</ID>
+  </CurrentIssues>
+</SmellBaseline>

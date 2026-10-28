@@ -13,6 +13,7 @@ class HapticService(private val context: Context) {
 
     private val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
+    @Suppress("UnusedParameter")
     fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
@@ -60,13 +61,17 @@ class SoundService(private val context: Context) {
     @Volatile
     var volume: Float = 1.0f
 
+    @Suppress("TooGenericExceptionCaught")
     private fun play(resId: Int) {
         if (!enabled) return
         try {
             val mp = android.media.MediaPlayer.create(context, resId) ?: return
             mp.setVolume(volume, volume)
             mp.setOnCompletionListener { it.release() }
-            mp.setOnErrorListener { player, _, _ -> player.release(); true }
+            mp.setOnErrorListener { player, _, _ ->
+                player.release()
+                true
+            }
             mp.start()
         } catch (e: Exception) {
             android.util.Log.w("SoundService", "play failed: ${e.message}")
@@ -74,10 +79,11 @@ class SoundService(private val context: Context) {
     }
 
     fun playDetectionSound(type: org.coiltester.core.model.DetectionType) {
-        val resId = when (type) {
-            org.coiltester.core.model.DetectionType.AC -> org.coiltester.app.R.raw.detect_ac
-            org.coiltester.core.model.DetectionType.DC -> org.coiltester.app.R.raw.detect_dc
-        }
+        val resId =
+            when (type) {
+                org.coiltester.core.model.DetectionType.AC -> org.coiltester.app.R.raw.detect_ac
+                org.coiltester.core.model.DetectionType.DC -> org.coiltester.app.R.raw.detect_dc
+            }
         play(resId)
     }
 

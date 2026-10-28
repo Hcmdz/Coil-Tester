@@ -50,13 +50,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 import org.coiltester.core.model.CalibrationAccuracy
 
@@ -83,7 +82,7 @@ fun MagneticToolScreen(
     onHapticToggle: (Boolean) -> Unit = {},
     onAcThresholdChange: (Double) -> Unit = {},
     onDcThresholdChange: (Double) -> Unit = {},
-    onToggleDetection: (Boolean) -> Unit = {}
+    onToggleDetection: (Boolean) -> Unit = {},
 ) {
     var sheet by remember { mutableStateOf(ThresholdSheet.NONE) }
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
@@ -91,41 +90,45 @@ fun MagneticToolScreen(
 
     Surface(
         modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
+        color = MaterialTheme.colorScheme.background,
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             // Top bar
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp),
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
                 Text(
                     text = "Coil Tester",
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onBackground
+                    color = MaterialTheme.colorScheme.onBackground,
                 )
                 IconButton(
                     onClick = onSettingsClick,
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape),
-                    colors = IconButtonDefaults.iconButtonColors(
-                        containerColor = MaterialTheme.colorScheme.errorContainer,
-                        contentColor = MaterialTheme.colorScheme.onErrorContainer
-                    )
+                    modifier =
+                        Modifier
+                            .size(40.dp)
+                            .clip(CircleShape),
+                    colors =
+                        IconButtonDefaults.iconButtonColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer,
+                            contentColor = MaterialTheme.colorScheme.onErrorContainer,
+                        ),
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Settings,
-                        contentDescription = "Settings"
+                        contentDescription = "Settings",
                     )
                 }
             }
@@ -134,41 +137,46 @@ fun MagneticToolScreen(
 
             if (distanceGuideEnabled && isDetecting) {
                 Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 12.dp),
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 12.dp),
                     shape = RoundedCornerShape(12.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerLow
-                    ),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+                    colors =
+                        CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+                        ),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
                 ) {
                     Text(
                         text = stringResource(org.coiltester.app.R.string.distance_guide),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(12.dp)
+                        modifier =
+                            Modifier
+                                .fillMaxWidth()
+                                .padding(12.dp),
                     )
                 }
             }
 
             // Main visual card
             Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(260.dp),
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .height(260.dp),
                 shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainerLow
-                ),
-                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+                colors =
+                    CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+                    ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
             ) {
                 Box(
                     modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+                    contentAlignment = Alignment.Center,
                 ) {
                     Canvas(modifier = Modifier.size(180.dp)) {
                         val radius = size.minDimension / 2f
@@ -180,7 +188,7 @@ fun MagneticToolScreen(
                                 sweepAngle = 180f,
                                 useCenter = true,
                                 topLeft = Offset(center.x - radius, center.y - radius),
-                                size = Size(radius * 2, radius * 2)
+                                size = Size(radius * 2, radius * 2),
                             )
                             drawArc(
                                 color = androidx.compose.ui.graphics.Color(0xFFFF3B30),
@@ -188,42 +196,44 @@ fun MagneticToolScreen(
                                 sweepAngle = 180f,
                                 useCenter = true,
                                 topLeft = Offset(center.x - radius, center.y - radius),
-                                size = Size(radius * 2, radius * 2)
+                                size = Size(radius * 2, radius * 2),
                             )
                             drawCircle(
                                 color = androidx.compose.ui.graphics.Color(0xFFFF3B30),
                                 radius = radius,
                                 center = center,
-                                style = Stroke(width = 4.dp.toPx(), cap = StrokeCap.Round)
+                                style = Stroke(width = 4.dp.toPx(), cap = StrokeCap.Round),
                             )
                         }
                     }
                     IconButton(
                         onClick = { onSoundToggle(!soundEnabled) },
-                        modifier = Modifier
-                            .align(Alignment.BottomStart)
-                            .padding(12.dp)
-                            .size(32.dp)
+                        modifier =
+                            Modifier
+                                .align(Alignment.BottomStart)
+                                .padding(12.dp)
+                                .size(32.dp),
                     ) {
                         Icon(
                             Icons.Filled.VolumeUp,
                             contentDescription = "Sound",
                             tint = if (soundEnabled) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.size(20.dp)
+                            modifier = Modifier.size(20.dp),
                         )
                     }
                     IconButton(
                         onClick = { onHapticToggle(!hapticEnabled) },
-                        modifier = Modifier
-                            .align(Alignment.BottomEnd)
-                            .padding(12.dp)
-                            .size(32.dp)
+                        modifier =
+                            Modifier
+                                .align(Alignment.BottomEnd)
+                                .padding(12.dp)
+                                .size(32.dp),
                     ) {
                         Icon(
                             Icons.Filled.Info,
                             contentDescription = "Haptic",
                             tint = if (hapticEnabled) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.size(20.dp)
+                            modifier = Modifier.size(20.dp),
                         )
                     }
                 }
@@ -234,19 +244,19 @@ fun MagneticToolScreen(
             if (advancedOptionsEnabled) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
                 ) {
                     MetricCard(
                         title = "AC: ${"%.1f".format(acValue)} µT",
                         subtitle = "Threshold: ${"%.1f".format(acThreshold)} µT",
                         modifier = Modifier.weight(1f),
-                        onClick = { sheet = ThresholdSheet.AC }
+                        onClick = { sheet = ThresholdSheet.AC },
                     )
                     MetricCard(
                         title = "DC: ${dcValue.toInt()} µT",
                         subtitle = "Threshold: ${dcThreshold.toInt()} µT",
                         modifier = Modifier.weight(1f),
-                        onClick = { sheet = ThresholdSheet.DC }
+                        onClick = { sheet = ThresholdSheet.DC },
                     )
                 }
                 Spacer(modifier = Modifier.height(16.dp))
@@ -255,29 +265,38 @@ fun MagneticToolScreen(
             Button(
                 onClick = { onToggleDetection(isDetecting) },
                 shape = RoundedCornerShape(50),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
-                    contentColor = MaterialTheme.colorScheme.onSurface
-                ),
+                colors =
+                    ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+                        contentColor = MaterialTheme.colorScheme.onSurface,
+                    ),
                 elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
-                modifier = Modifier
-                    .fillMaxWidth(0.7f)
-                    .height(52.dp)
+                modifier =
+                    Modifier
+                        .fillMaxWidth(0.7f)
+                        .height(52.dp),
             ) {
                 Row(
                     modifier = Modifier.fillMaxSize(),
                     horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Icon(
                         if (isDetecting) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                        contentDescription = "Toggle"
+                        contentDescription = "Toggle",
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = if (isDetecting) stringResource(org.coiltester.app.R.string.detection_stop) else stringResource(org.coiltester.app.R.string.detection_start),
+                        text =
+                            if (isDetecting) {
+                                stringResource(
+                                    org.coiltester.app.R.string.detection_stop,
+                                )
+                            } else {
+                                stringResource(org.coiltester.app.R.string.detection_start)
+                            },
                         style = MaterialTheme.typography.bodyLarge,
-                        fontWeight = FontWeight.Medium
+                        fontWeight = FontWeight.Medium,
                     )
                 }
             }
@@ -285,24 +304,25 @@ fun MagneticToolScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             if (advancedOptionsEnabled) {
-                val accuracyLabel = when (calibrationAccuracy) {
-                    CalibrationAccuracy.UNCALIBRATED -> "Uncalibrated"
-                    CalibrationAccuracy.LOW -> "Low"
-                    CalibrationAccuracy.MEDIUM -> "Medium"
-                    CalibrationAccuracy.HIGH -> "High"
-                    else -> "Unknown"
-                }
+                val accuracyLabel =
+                    when (calibrationAccuracy) {
+                        CalibrationAccuracy.UNCALIBRATED -> "Uncalibrated"
+                        CalibrationAccuracy.LOW -> "Low"
+                        CalibrationAccuracy.MEDIUM -> "Medium"
+                        CalibrationAccuracy.HIGH -> "High"
+                        else -> "Unknown"
+                    }
                 Surface(
                     shape = RoundedCornerShape(8.dp),
                     color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.6f),
-                    modifier = Modifier.padding(horizontal = 24.dp)
+                    modifier = Modifier.padding(horizontal = 24.dp),
                 ) {
                     Text(
                         text = "${stringResource(org.coiltester.app.R.string.settings_calibration)}: $accuracyLabel",
                         color = MaterialTheme.colorScheme.onErrorContainer,
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Medium,
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
                     )
                 }
                 Spacer(modifier = Modifier.height(8.dp))
@@ -313,7 +333,7 @@ fun MagneticToolScreen(
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 24.dp)
+                modifier = Modifier.padding(horizontal = 24.dp),
             )
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -321,33 +341,36 @@ fun MagneticToolScreen(
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceContainerLow
-                ),
-                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+                colors =
+                    CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+                    ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
             ) {
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp, vertical = 12.dp),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
                 ) {
                     Text(
                         text = stringResource(org.coiltester.app.R.string.settings_advanced_options),
                         style = MaterialTheme.typography.bodyLarge,
                         fontWeight = FontWeight.Medium,
-                        color = MaterialTheme.colorScheme.onSurface
+                        color = MaterialTheme.colorScheme.onSurface,
                     )
                     Switch(
                         checked = advancedOptionsEnabled,
                         onCheckedChange = onAdvancedOptionsToggle,
-                        colors = SwitchDefaults.colors(
-                            checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
-                            checkedTrackColor = MaterialTheme.colorScheme.primary,
-                            uncheckedThumbColor = MaterialTheme.colorScheme.outline,
-                            uncheckedTrackColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                        )
+                        colors =
+                            SwitchDefaults.colors(
+                                checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
+                                checkedTrackColor = MaterialTheme.colorScheme.primary,
+                                uncheckedThumbColor = MaterialTheme.colorScheme.outline,
+                                uncheckedTrackColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                            ),
                     )
                 }
             }
@@ -357,7 +380,7 @@ fun MagneticToolScreen(
             ModalBottomSheet(
                 onDismissRequest = { sheet = ThresholdSheet.NONE },
                 sheetState = sheetState,
-                containerColor = MaterialTheme.colorScheme.surfaceContainerHigh
+                containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
             ) {
                 val isAc = sheet == ThresholdSheet.AC
                 val currentThreshold = if (isAc) acThreshold else dcThreshold
@@ -366,33 +389,42 @@ fun MagneticToolScreen(
                 var value by remember { mutableStateOf(currentThreshold.toFloat()) }
 
                 Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(24.dp),
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(24.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     Text(
                         text = if (isAc) "AC Threshold: ${"%.1f".format(value)} µT" else "DC Threshold: ${value.toInt()} µT",
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface
+                        color = MaterialTheme.colorScheme.onSurface,
                     )
                     Text(
-                        text = if (isAc) "${"%.1f".format(min)} µT  —  ${"%.1f".format(max)} µT" else "${min.toInt()} µT  —  ${max.toInt()} µT",
+                        text =
+                            if (isAc) {
+                                "${"%.1f".format(
+                                    min,
+                                )} µT  —  ${"%.1f".format(max)} µT"
+                            } else {
+                                "${min.toInt()} µT  —  ${max.toInt()} µT"
+                            },
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
                     ) {
                         Button(
                             onClick = { value = (value - if (isAc) 0.5f else 10f).coerceIn(min.toFloat(), max.toFloat()) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                            )
+                            colors =
+                                ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                                ),
                         ) {
                             Text("-", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)
                         }
@@ -401,17 +433,19 @@ fun MagneticToolScreen(
                             onValueChange = { value = it },
                             valueRange = min.toFloat()..max.toFloat(),
                             modifier = Modifier.weight(1f),
-                            colors = SliderDefaults.colors(
-                                thumbColor = MaterialTheme.colorScheme.primary,
-                                activeTrackColor = MaterialTheme.colorScheme.primary,
-                                inactiveTrackColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                            )
+                            colors =
+                                SliderDefaults.colors(
+                                    thumbColor = MaterialTheme.colorScheme.primary,
+                                    activeTrackColor = MaterialTheme.colorScheme.primary,
+                                    inactiveTrackColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                                ),
                         )
                         Button(
                             onClick = { value = (value + if (isAc) 0.5f else 10f).coerceIn(min.toFloat(), max.toFloat()) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                            )
+                            colors =
+                                ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                                ),
                         ) {
                             Text("+", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)
                         }
@@ -421,12 +455,14 @@ fun MagneticToolScreen(
                             if (isAc) onAcThresholdChange(value.toDouble()) else onDcThresholdChange(value.toDouble())
                             scope.launch { sheetState.hide() }.invokeOnCompletion { sheet = ThresholdSheet.NONE }
                         },
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.primary
-                        ),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(48.dp)
+                        colors =
+                            ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.primary,
+                            ),
+                        modifier =
+                            Modifier
+                                .fillMaxWidth()
+                                .height(48.dp),
                     ) {
                         Text("DONE", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onPrimary)
                     }
@@ -442,34 +478,36 @@ private fun MetricCard(
     title: String,
     subtitle: String,
     modifier: Modifier = Modifier,
-    onClick: () -> Unit = {}
+    onClick: () -> Unit = {},
 ) {
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceContainerLow
-        ),
+        colors =
+            CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+            ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-        modifier = modifier.height(80.dp)
+        modifier = modifier.height(80.dp),
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+            verticalArrangement = Arrangement.Center,
         ) {
             Text(
                 text = title,
                 style = MaterialTheme.typography.bodyLarge,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurface
+                color = MaterialTheme.colorScheme.onSurface,
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = subtitle,
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }

@@ -3,16 +3,18 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.jacoco)
 }
 
 android {
     namespace = "org.coiltester.app"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "org.coiltester.app"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = rootProject.extra["versionCode"] as Int
         versionName = rootProject.extra["versionName"] as String
         vectorDrawables.useSupportLibrary = true
@@ -23,7 +25,6 @@ android {
         compose = true
         viewBinding = true
     }
-
 
     packagingOptions {
         resources {
@@ -37,7 +38,7 @@ android {
             isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
         debug {
@@ -54,14 +55,14 @@ android {
     // Kotlin compiler options
     kotlinOptions {
         jvmTarget = "17"
-        freeCompilerArgs += listOf(
-            "-Xopt-in=kotlin.RequiresOptIn",
-            "-Xjsr305=strict"
-        )
+        freeCompilerArgs +=
+            listOf(
+                "-Xopt-in=kotlin.RequiresOptIn",
+                "-Xjsr305=strict",
+            )
     }
 
     // Version properties (already set from rootProject.extra in defaultConfig)
-
 }
 
 dependencies {
@@ -109,7 +110,6 @@ dependencies {
     androidTestImplementation(libs.room.testing)
 }
 
-
 tasks.withType<Test> {
     useJUnitPlatform()
 }
@@ -120,4 +120,35 @@ detekt {
     config.setFrom(files("../config/detekt/detekt.yml"))
     buildUponDefaultConfig = true
     parallel = true
+    baseline = file("detekt-baseline.xml")
+}
+
+// Ktlint
+ktlint {
+    ignoreFailures.set(true)
+}
+
+// JaCoCo coverage report
+tasks.register<JacocoReport>("jacocoTestReport") {
+    dependsOn("testDebugUnitTest")
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+    val fileFilter = listOf(
+        "**/R.class", "**/R$*.class", "**/BuildConfig.*", "**/Manifest*.*",
+        "**/*Test*.*", "android/**/*.*", "**/*\$*.class"
+    )
+    val debugTree = fileTree("${layout.buildDirectory.get().asFile}/intermediates/javac/debug") +
+        fileTree("${layout.buildDirectory.get().asFile}/tmp/kotlin-classes/debug")
+    sourceDirectories.setFrom(files("src/main/kotlin", "src/main/java"))
+    classDirectories.setFrom(files(debugTree.files.map { fileTree(it) { exclude(fileFilter) } }))
+    executionData.setFrom(fileTree(layout.buildDirectory.get().asFile) { include("**/*.exec", "**/*.ec") })
+}
+
+// Compose compiler metrics/reports
+composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    metricsDestination = layout.buildDirectory.dir("compose_compiler")
+    stabilityConfigurationFile = file("compose-stability.conf")
 }
