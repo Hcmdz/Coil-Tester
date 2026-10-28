@@ -1,19 +1,15 @@
 package org.coiltester.app.ui.navigation
 
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
-import kotlinx.coroutines.delay
-import androidx.navigation.NavController
+import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import kotlinx.coroutines.delay
 import org.coiltester.app.di.AppRoute
 import org.coiltester.app.ui.detection.MagneticToolScreen
 import org.coiltester.app.ui.settings.SettingsScreen
@@ -25,16 +21,19 @@ import org.coiltester.core.model.DetectionStatus
 fun AppNavHost(
     navController: NavHostController,
     detectionViewModel: DetectionViewModel,
-    settingsViewModel: SettingsViewModel
+    settingsViewModel: SettingsViewModel,
 ) {
     NavHost(navController = navController, startDestination = "detection") {
         composable("detection") {
-            val settingsState by settingsViewModel.state.collectAsState()
-            val detectionState by detectionViewModel.state.collectAsState()
+            val settingsState by settingsViewModel.state.collectAsStateWithLifecycle()
+            val detectionState by detectionViewModel.state.collectAsStateWithLifecycle()
             val s = settingsState.settings
-            val hasHighField = detectionState.detectionType != null &&
-                (detectionState.status == DetectionStatus.CONFIRMED_AC ||
-                 detectionState.status == DetectionStatus.CONFIRMED_DC)
+            val hasHighField =
+                detectionState.detectionType != null &&
+                    (
+                        detectionState.status == DetectionStatus.CONFIRMED_AC ||
+                            detectionState.status == DetectionStatus.CONFIRMED_DC
+                    )
             val rotation = remember { mutableStateOf(0f) }
             LaunchedEffect(hasHighField) {
                 if (hasHighField) {
@@ -78,9 +77,11 @@ fun AppNavHost(
                     if (isDetecting) {
                         detectionViewModel.sendIntent(org.coiltester.app.viewmodel.DetectionIntent.Stop)
                     } else {
-                        detectionViewModel.sendIntent(org.coiltester.app.viewmodel.DetectionIntent.Start(org.coiltester.core.model.DetectionConfig.fromSettings(s)))
+                        detectionViewModel.sendIntent(
+                            org.coiltester.app.viewmodel.DetectionIntent.Start(org.coiltester.core.model.DetectionConfig.fromSettings(s)),
+                        )
                     }
-                }
+                },
             )
         }
 
@@ -88,14 +89,15 @@ fun AppNavHost(
             SettingsScreen(
                 viewModel = settingsViewModel,
                 onNavigate = { route -> navController.navigate(route.toRouteString()) },
-                onBack = { navController.popBackStack() }
+                onBack = { navController.popBackStack() },
             )
         }
     }
 }
 
-fun AppRoute.toRouteString(): String = when (this) {
-    is AppRoute.Detection -> "detection"
-    is AppRoute.Settings -> "settings"
-    is AppRoute.About -> "about"
-}
+fun AppRoute.toRouteString(): String =
+    when (this) {
+        is AppRoute.Detection -> "detection"
+        is AppRoute.Settings -> "settings"
+        is AppRoute.About -> "about"
+    }

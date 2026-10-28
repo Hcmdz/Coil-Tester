@@ -15,51 +15,55 @@ import org.koin.core.context.startKoin
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
-val coreModule = module {
-    single<CalibrationUseCase> { CalibrationUseCase(get(), get()) }
-    single<SetSensitivityUseCase> { SetSensitivityUseCase(get()) }
-    single<SetLanguageUseCase> { SetLanguageUseCase(get()) }
-    single<SetThemeUseCase> { SetThemeUseCase(get()) }
-    single<SetAdvancedOptionsUseCase> { SetAdvancedOptionsUseCase(get()) }
-    single<SetAcThresholdUseCase> { SetAcThresholdUseCase(get()) }
-    single<SetDcThresholdUseCase> { SetDcThresholdUseCase(get()) }
-    single<SetFrequencyBandUseCase> { SetFrequencyBandUseCase(get()) }
-    single<SetSoundVolumeUseCase> { SetSoundVolumeUseCase(get()) }
-    single<ConfigureDetectionUseCase> { ConfigureDetectionUseCase(get(), get()) }
-    single<StopDetectionUseCase> { StopDetectionUseCase(get()) }
-}
-
-val dataModule = module {
-    single<CoilTesterDatabase> { CoilTesterDatabase.getInstance(androidContext()) }
-    single<ProductDao> { get<CoilTesterDatabase>().productDao() }
-    single<SparePartDao> { get<CoilTesterDatabase>().sparePartDao() }
-    single<TroubleshootingDao> { get<CoilTesterDatabase>().troubleshootingDao() }
-    single<RefrigerantDao> { get<CoilTesterDatabase>().refrigerantDao() }
-    single<CampaignDao> { get<CoilTesterDatabase>().campaignDao() }
-    single<DbInfoDao> { get<CoilTesterDatabase>().dbInfoDao() }
-    single<ProductRepository> { ProductRepositoryImpl(get(), get(), get()) }
-    single<ReferenceRepository> { ReferenceRepositoryImpl(get(), get()) }
-    single<androidx.datastore.core.DataStore<androidx.datastore.preferences.core.Preferences>> {
-        androidx.datastore.preferences.core.PreferenceDataStoreFactory.create(
-            produceFile = { java.io.File(androidContext().filesDir, "coil_tester_settings.preferences_pb") }
-        )
+val coreModule =
+    module {
+        single<CalibrationUseCase> { CalibrationUseCase(get(), get()) }
+        single<SetSensitivityUseCase> { SetSensitivityUseCase(get()) }
+        single<SetLanguageUseCase> { SetLanguageUseCase(get()) }
+        single<SetThemeUseCase> { SetThemeUseCase(get()) }
+        single<SetAdvancedOptionsUseCase> { SetAdvancedOptionsUseCase(get()) }
+        single<SetAcThresholdUseCase> { SetAcThresholdUseCase(get()) }
+        single<SetDcThresholdUseCase> { SetDcThresholdUseCase(get()) }
+        single<SetFrequencyBandUseCase> { SetFrequencyBandUseCase(get()) }
+        single<SetSoundVolumeUseCase> { SetSoundVolumeUseCase(get()) }
+        single<ConfigureDetectionUseCase> { ConfigureDetectionUseCase(get(), get()) }
+        single<StopDetectionUseCase> { StopDetectionUseCase(get()) }
     }
-    single<SettingsRepository> { SettingsRepositoryImpl(get()) }
-}
 
-val platformModule = module {
-    single<kotlinx.coroutines.CoroutineScope> { kotlinx.coroutines.MainScope() }
-    single<DetectionRepository> { SensorProvider(androidContext()) }
-    single<SensorProvider> { SensorProvider(androidContext()) }
-    single<PermissionHelper> { PermissionHelper(androidContext() as android.app.Activity) }
-    single<HapticService> { HapticService(androidContext()) }
-    single<SoundService> { SoundService(androidContext()) }
-}
+val dataModule =
+    module {
+        single<CoilTesterDatabase> { CoilTesterDatabase.getInstance(androidContext()) }
+        single<ProductDao> { get<CoilTesterDatabase>().productDao() }
+        single<SparePartDao> { get<CoilTesterDatabase>().sparePartDao() }
+        single<TroubleshootingDao> { get<CoilTesterDatabase>().troubleshootingDao() }
+        single<RefrigerantDao> { get<CoilTesterDatabase>().refrigerantDao() }
+        single<CampaignDao> { get<CoilTesterDatabase>().campaignDao() }
+        single<DbInfoDao> { get<CoilTesterDatabase>().dbInfoDao() }
+        single<ProductRepository> { ProductRepositoryImpl(get(), get(), get()) }
+        single<ReferenceRepository> { ReferenceRepositoryImpl(get(), get()) }
+        single<androidx.datastore.core.DataStore<androidx.datastore.preferences.core.Preferences>> {
+            androidx.datastore.preferences.core.PreferenceDataStoreFactory.create(
+                produceFile = { java.io.File(androidContext().filesDir, "coil_tester_settings.preferences_pb") },
+            )
+        }
+        single<SettingsRepository> { SettingsRepositoryImpl(get()) }
+    }
 
-val uiModule = module {
-    viewModel { DetectionViewModel(get(), get(), get(), get(), get(), get(), get(), get(), get()) }
-    viewModel { SettingsViewModel(get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), get()) }
-}
+val platformModule =
+    module {
+        single<kotlinx.coroutines.CoroutineScope> { kotlinx.coroutines.MainScope() }
+        single<DetectionRepository> { SensorProvider(androidContext()) }
+        single<SensorProvider> { SensorProvider(androidContext()) }
+        single<PermissionHelper> { PermissionHelper(androidContext() as android.app.Activity) }
+        single<HapticService> { HapticService(androidContext()) }
+        single<SoundService> { SoundService(androidContext()) }
+    }
+
+val uiModule =
+    module {
+        viewModel { DetectionViewModel(get(), get(), get(), get(), get(), get(), get(), get(), get()) }
+        viewModel { SettingsViewModel(get(), get(), get(), get(), get(), get(), get(), get(), get(), get(), get()) }
+    }
 
 fun startKoin(context: Context) {
     try {

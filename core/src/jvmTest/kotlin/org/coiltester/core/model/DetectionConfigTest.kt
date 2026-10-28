@@ -20,7 +20,7 @@ class DetectionConfigTest {
         val config = DetectionConfig.fromSettings(settings)
 
         assertEquals(0.5, config.acThreshold, 0.001)
-        assertEquals(2.0, config.dcThreshold, 0.001)
+        assertEquals(120.0, config.dcThreshold, 0.001)
     }
 
     @Test

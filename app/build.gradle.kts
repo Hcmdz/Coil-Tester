@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -24,7 +25,6 @@ android {
         viewBinding = true
     }
 
-
     packagingOptions {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1,LICENSE,NOTICE}/*"
@@ -37,7 +37,7 @@ android {
             isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
         debug {
@@ -54,14 +54,14 @@ android {
     // Kotlin compiler options
     kotlinOptions {
         jvmTarget = "17"
-        freeCompilerArgs += listOf(
-            "-Xopt-in=kotlin.RequiresOptIn",
-            "-Xjsr305=strict"
-        )
+        freeCompilerArgs +=
+            listOf(
+                "-Xopt-in=kotlin.RequiresOptIn",
+                "-Xjsr305=strict",
+            )
     }
 
     // Version properties (already set from rootProject.extra in defaultConfig)
-
 }
 
 dependencies {
@@ -109,7 +109,6 @@ dependencies {
     androidTestImplementation(libs.room.testing)
 }
 
-
 tasks.withType<Test> {
     useJUnitPlatform()
 }
@@ -120,4 +119,16 @@ detekt {
     config.setFrom(files("../config/detekt/detekt.yml"))
     buildUponDefaultConfig = true
     parallel = true
+    baseline = file("detekt-baseline.xml")
+}
+
+// Ktlint
+ktlint {
+    ignoreFailures.set(true)
+}
+
+// Compose compiler metrics/reports
+composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    metricsDestination = layout.buildDirectory.dir("compose_compiler")
 }
