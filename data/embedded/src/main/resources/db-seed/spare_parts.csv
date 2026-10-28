@@ -1,0 +1,7 @@
+id,product_id,part_number,description,compatibility,image
+SP-EV220B-1,EV220B-10,042H1118,Coil 24VAC 9W,EV220B 10mm;EV220B 12mm,spare_parts/sp-ev220b-1.png
+SP-EV220B-2,EV220B-10,042H1119,Seal kit NBR,EV220B 10mm,spare_parts/sp-ev220b-2.png
+SP-EV220B-3,EV220B-12,042H1120,Coil 24VAC 12W,EV220B 12mm,spare_parts/sp-ev220b-3.png
+SP-EV225B-1,EV225B-10,042H1121,Coil 24VDC 9W,EV225B 10mm,spare_parts/sp-ev225b-1.png
+SP-AMV10-1,AMV10,042H1122,Gear assembly,AMV10,spare_parts/sp-amv10-1.png
+SP-AMV20-1,AMV20,042H1123,Gear assembly high torque,AMV20,spare_parts/sp-amv20-1.png

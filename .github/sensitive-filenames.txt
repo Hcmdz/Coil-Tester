@@ -1,0 +1,9 @@
+*.jks
+*.keystore
+local.properties
+google-services.json
+keystore.properties
+release.keystore
+debug.keystore
+credentials.json
+service-account.json

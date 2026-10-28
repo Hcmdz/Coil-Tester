@@ -1,0 +1,36 @@
+# Published: app code only. Everything below stays local, never committed.
+/AGENTS.md
+/memory/
+/specs/
+/docs/decisions/
+/.opencode/
+/AppIcons/
+/.claude/
+
+# Build / local secrets (standard Android)
+local.properties
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+version.properties
+.idea/
+*.iml
+build/
+.gradle/
+.kotlin/
+.detekt/
+.agents/
+*.apk
+*.aab
+*.tar.gz
+*.hprof
+*.log
+.env
+.env.*
+*.env
+
+# OS
+.DS_Store
+Thumbs.db

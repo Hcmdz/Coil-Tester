@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">CoilTester</string>
+
+    <!-- Detection -->
+    <string name="detection_title">كشف الملف</string>
+    <string name="detection_ready">جاهز للكشف</string>
+    <string name="detection_calibrating">جارٍ المعايرة... ابق ثابتاً</string>
+    <string name="detection_detecting">جارٍ كشف المجال المغناطيسي...</string>
+    <string name="detection_ac_confirmed">تم كشف مجال AC</string>
+    <string name="detection_dc_confirmed">تم كشف مجال DC</string>
+    <string name="detection_error">خطأ</string>
+    <string name="detection_calibrate">معايرة</string>
+    <string name="detection_start">بدء</string>
+    <string name="detection_stop">إيقاف</string>
+    <string name="distance_guide">أمسك الهاتف على بعد 10 سم من الملف</string>
+
+    <!-- Catalog -->
+    <string name="catalog_title">كتالوج المنتجات</string>
+    <string name="catalog_search">البحث عن منتجات...</string>
+    <string name="catalog_no_results">لم يتم العثور على منتجات</string>
+    <string name="catalog_category_all">الكل</string>
+
+    <!-- Reference -->
+    <string name="reference_title">المراجع</string>
+    <string name="reference_refrigerants">مبردات Low-GWP</string>
+    <string name="reference_campaigns">الحملات الحالية</string>
+    <string name="reference_gwp">GWP: %d</string>
+    <string name="reference_safety">الأمان: %s</string>
+    <string name="reference_applications">التطبيقات: %s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_sensitivity">حساسية الكشف</string>
+    <string name="settings_sensitivity_subtitle">ضبط حد الكشف</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_subtitle">لغة التطبيق</string>
+    <string name="settings_theme">السمة</string>
+    <string name="settings_theme_subtitle">فاتح، داكن، أو النظام</string>
+    <string name="settings_haptic">الرد اللمسي</string>
+    <string name="settings_haptic_subtitle">الاهتزاز عند الكشف</string>
+    <string name="settings_sound">الرد الصوتي</string>
+    <string name="settings_sound_subtitle">صوت عند الكشف</string>
+    <string name="settings_distance_guide">دليل المسافة</string>
+    <string name="settings_distance_guide_subtitle">إظهار دليل 10 سم</string>
+    <string name="settings_calibration">المعايرة</string>
+    <string name="settings_calibration_last">آخر معايرة</string>
+    <string name="settings_reset">إعادة تعيين</string>
+    <string name="settings_reset_calibration">إعادة تعيين المعايرة</string>
+    <string name="settings_reset_calibration_subtitle">مسح بيانات معايرة المستشعر</string>
+    <string name="settings_about">حول</string>
+    <string name="settings_about_subtitle">معلومات الإصدار والتراخيص</string>
+
+    <!-- Sensitivity -->
+    <string name="sensitivity_low">منخفض</string>
+    <string name="sensitivity_medium">متوسط</string>
+    <string name="sensitivity_high">عالي</string>
+
+    <!-- Theme -->
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">داكن</string>
+    <string name="theme_system">النظام</string>
+
+    <!-- Languages -->
+    <string name="lang_french">Français</string>
+    <string name="lang_english">English</string>
+    <string name="lang_arabic">العربية</string>
+
+    <!-- Errors -->
+    <string name="error_sensor_unavailable">مستشعر مغناطيسي غير متاح</string>
+    <string name="error_permission_denied">تم رفض إذن المستشعر</string>
+    <string name="error_calibration_failed">فشل المعايرة</string>
+
+    <!-- Advanced options -->
+    <string name="settings_advanced_options">خيارات متقدمة</string>
+    <string name="settings_advanced_options_subtitle">عتبات وتردد مخصصان</string>
+    <string name="settings_ac_threshold">عتبة AC (µT)</string>
+    <string name="settings_dc_threshold">عتبة DC (µT)</string>
+    <string name="settings_frequency_band">نطاق التردد</string>
+    <string name="freq_50hz">50 Hz</string>
+    <string name="freq_60hz">60 Hz</string>
+    <string name="settings_sound_volume">مستوى الصوت</string>
+    <string name="settings_calibration_accuracy">دقة المعايرة</string>
+    <string name="settings_general">عام</string>
+    <string name="settings_feedback">ردود الفعل اللمسية والصوتية</string>
+    <string name="settings_advanced">خيارات متقدمة</string>
+
+</resources>

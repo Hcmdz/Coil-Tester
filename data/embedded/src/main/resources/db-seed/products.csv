@@ -1,0 +1,6 @@
+id,name,category,description,specs_json,image,spare_part_ids,guide_id
+EV220B-10,EV220B 10mm 24VAC,Solenoid Valve,Direct acting solenoid valve 10mm 24VAC,"{""voltage"":""24VAC"",""pressure"":""0-10bar"",""connection"":""G1/4""}",products/ev220b.png,SP-EV220B-1;SP-EV220B-2,TG-EV220B
+EV220B-12,EV220B 12mm 24VAC,Solenoid Valve,Direct acting solenoid valve 12mm 24VAC,"{""voltage"":""24VAC"",""pressure"":""0-10bar"",""connection"":""G3/8""}",products/ev220b.png,SP-EV220B-3,TG-EV220B
+EV225B-10,EV225B 10mm 24VDC,Solenoid Valve,Pilot operated solenoid valve 10mm 24VDC,"{""voltage"":""24VDC"",""pressure"":""0-16bar"",""connection"":""G1/4""}",products/ev225b.png,SP-EV225B-1,TG-EV225B
+AMV10,AMV10 Actuator,Actuator,Motorized valve actuator 24V,"{""voltage"":""24V"",""torque"":""10Nm"",""speed"":""15s""}",products/amv10.png,SP-AMV10-1,TG-AMV10
+AMV20,AMV20 Actuator,Actuator,Motorized valve actuator 24V high torque,"{""voltage"":""24V"",""torque"":""20Nm"",""speed"":""30s""}",products/amv20.png,SP-AMV20-1,TG-AMV20

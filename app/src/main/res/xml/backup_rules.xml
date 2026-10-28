@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude database and settings from backup -->
+    <exclude domain="database" path="coil_tester.db" />
+    <exclude domain="sharedpref" path="coil_tester_settings.xml" />
+    <exclude domain="sharedpref" path="coil_tester_settings.preferences_pb" />
+</full-backup-content>

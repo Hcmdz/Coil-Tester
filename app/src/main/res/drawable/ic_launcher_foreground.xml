@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Coil/solenoid icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,20 C35,20 20,35 20,54 C20,73 35,88 54,88 C73,88 88,73 88,54 C88,35 73,20 54,20 Z M54,28 C68,28 80,40 80,54 C80,68 68,80 54,80 C40,80 28,68 28,54 C28,40 40,28 54,28 Z" />
+    <!-- Inner coil turns -->
+    <path
+        android:fillColor="#0066CC"
+        android:pathData="M54,36 C45,36 36,45 36,54 C36,63 45,72 54,72 C63,72 72,63 72,54 C72,45 63,36 54,36 Z M54,44 C59,44 64,49 64,54 C64,59 59,64 54,64 C49,64 44,59 44,54 C44,49 49,44 54,44 Z" />
+    <!-- Center dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,50 C56,50 58,52 58,54 C58,56 56,58 54,58 C52,58 50,56 50,54 C50,52 52,50 54,50 Z" />
+    <!-- Magnetic field lines -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1"
+        android:pathData="M54,14 L54,20 M54,88 L54,94 M14,54 L20,54 M88,54 L94,54" />
+</vector>

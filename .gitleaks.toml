@@ -1,0 +1,22 @@
+title = "CoilTester Gitleaks Config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+description = "Android Keystore Password"
+id = "android-keystore-password"
+regex = '''(?i)(storePassword|keyPassword|keystore.*password)\s*[=:]\s*["\']?([^\s"\']+)["\']?'''
+tags = ["password", "keystore"]
+
+[[rules]]
+description = "Google Services API Key"
+id = "google-api-key"
+regex = '''AIza[0-9A-Za-z\\-_]{35}'''
+tags = ["key", "google"]
+
+[[rules]]
+description = "Firebase URL"
+id = "firebase-url"
+regex = '''https://[a-z0-9-]+\.firebaseio\.com'''
+tags = ["firebase"]

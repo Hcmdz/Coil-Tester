@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- No cleartext traffic - app is fully offline -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Domain config for future API use (certificate pinning ready) -->
+    <!-- Domain config for future API use (certificate pinning ready).
+         Pin-set omitted until real pins are available; lint requires a <pin>
+         element inside <pin-set>, so the placeholder is kept commented. -->
+    <!--
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">my.danfoss.com</domain>
+        <pin-set expiration="2026-01-01">
+            <pin algorithm="SHA-256">base64_pin_here</pin>
+        </pin-set>
+    </domain-config>
+    -->
+
+    <!-- Debug overrides (only in debug builds) -->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

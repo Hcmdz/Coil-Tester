@@ -1,0 +1,6 @@
+name,gwp,safety_class,pressure_temp_chart_json,applications,phase_out_date
+R-410A,2088,A1,"[{""tempC"":-40,""pressureBar"":3.2},{""tempC"":0,""pressureBar"":7.5},{""tempC"":40,""pressureBar"":24.1}]",AC;HeatPump,2025-01-01
+R-32,675,A2L,"[{""tempC"":-40,""pressureBar"":3.4},{""tempC"":0,""pressureBar"":7.8},{""tempC"":40,""pressureBar"":25.2}]",AC;HeatPump,
+R-134a,1430,A1,"[{""tempC"":-40,""pressureBar"":1.0},{""tempC"":0,""pressureBar"":2.9},{""tempC"":40,""pressureBar"":10.1}]",Refrigeration;AC,
+R-290,3,A3,"[{""tempC"":-40,""pressureBar"":1.5},{""tempC"":0,""pressureBar"":4.7},{""tempC"":40,""pressureBar"":15.0}]",Refrigeration;HeatPump,
+R-744,1,A1,"[{""tempC"":-40,""pressureBar"":14.4},{""tempC"":0,""pressureBar"":34.9},{""tempC"":40,""pressureBar"":104.7}]",AC;HeatPump;Refrigeration,

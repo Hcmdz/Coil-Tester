@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">CoilTester</string>
+
+    <!-- Detection -->
+    <string name="detection_title">Détection de bobine</string>
+    <string name="detection_ready">Prêt à détecter</string>
+    <string name="detection_calibrating">Calibrage... Restez immobile</string>
+    <string name="detection_detecting">Détection du champ magnétique...</string>
+    <string name="detection_ac_confirmed">Champ AC détecté</string>
+    <string name="detection_dc_confirmed">Champ DC détecté</string>
+    <string name="detection_error">Erreur</string>
+    <string name="detection_calibrate">Calibrer</string>
+    <string name="detection_start">Démarrer</string>
+    <string name="detection_stop">Arrêter</string>
+    <string name="distance_guide">Tenez le téléphone à 10 cm de la bobine</string>
+
+    <!-- Catalog -->
+    <string name="catalog_title">Catalogue produits</string>
+    <string name="catalog_search">Rechercher des produits...</string>
+    <string name="catalog_no_results">Aucun produit trouvé</string>
+    <string name="catalog_category_all">Toutes</string>
+
+    <!-- Reference -->
+    <string name="reference_title">Références</string>
+    <string name="reference_refrigerants">Réfrigérants Low-GWP</string>
+    <string name="reference_campaigns">Campagnes en cours</string>
+    <string name="reference_gwp">GWP: %d</string>
+    <string name="reference_safety">Sécurité: %s</string>
+    <string name="reference_applications">Applications: %s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_sensitivity">Sensibilité de détection</string>
+    <string name="settings_sensitivity_subtitle">Ajuster le seuil de détection</string>
+    <string name="settings_language">Langue</string>
+    <string name="settings_language_subtitle">Langue de l\'application</string>
+    <string name="settings_theme">Thème</string>
+    <string name="settings_theme_subtitle">Clair, sombre ou système</string>
+    <string name="settings_haptic">Retour haptique</string>
+    <string name="settings_haptic_subtitle">Vibration à la détection</string>
+    <string name="settings_sound">Retour sonore</string>
+    <string name="settings_sound_subtitle">Bip à la détection</string>
+    <string name="settings_distance_guide">Guide de distance</string>
+    <string name="settings_distance_guide_subtitle">Afficher le guide 10 cm</string>
+    <string name="settings_calibration">Calibrage</string>
+    <string name="settings_calibration_last">Dernier calibrage</string>
+    <string name="settings_reset">Réinitialiser</string>
+    <string name="settings_reset_calibration">Réinitialiser le calibrage</string>
+    <string name="settings_reset_calibration_subtitle">Effacer les données de calibrage du capteur</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_about_subtitle">Infos version et licences</string>
+    <string name="settings_general">Général</string>
+    <string name="settings_feedback">Retour haptique et sonore</string>
+    <string name="settings_advanced">Options avancées</string>
+
+    <!-- Sensitivity -->
+    <string name="sensitivity_low">Faible</string>
+    <string name="sensitivity_medium">Moyenne</string>
+    <string name="sensitivity_high">Élevée</string>
+
+    <!-- Theme -->
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Sombre</string>
+    <string name="theme_system">Système</string>
+
+    <!-- Languages -->
+    <string name="lang_french">Français</string>
+    <string name="lang_english">English</string>
+    <string name="lang_arabic">العربية</string>
+
+    <!-- Errors -->
+    <string name="error_sensor_unavailable">Capteur magnétique non disponible</string>
+    <string name="error_permission_denied">Permission capteur refusée</string>
+    <string name="error_calibration_failed">Échec du calibrage</string>
+
+    <!-- Advanced options -->
+    <string name="settings_advanced_options">Options avancées</string>
+    <string name="settings_advanced_options_subtitle">Seuils et fréquence personnalisés</string>
+    <string name="settings_ac_threshold">Seuil AC (µT)</string>
+    <string name="settings_dc_threshold">Seuil DC (µT)</string>
+    <string name="settings_frequency_band">Bande de fréquence</string>
+    <string name="freq_50hz">50 Hz</string>
+    <string name="freq_60hz">60 Hz</string>
+    <string name="settings_sound_volume">Volume sonore</string>
+    <string name="settings_calibration_accuracy">Précision du calibrage</string>
+</resources>
