@@ -7,18 +7,6 @@
     <ID>CyclomaticComplexMethod:SettingsScreen.kt$@Composable @Suppress("UnusedParameter") fun SettingsScreen( viewModel: SettingsViewModel, onNavigate: (AppRoute) -&gt; Unit, onBack: () -&gt; Unit = {}, )</ID>
     <ID>CyclomaticComplexMethod:SettingsViewModel.kt$SettingsViewModel$fun sendIntent(intent: SettingsIntent)</ID>
     <ID>EmptyFunctionBlock:SettingsViewModelTest.kt$FakeSensorProvider${ }</ID>
-    <ID>FunctionNaming:Color.kt$@Composable fun CoilTesterTheme( darkTheme: Boolean = false, pureBlack: Boolean = false, content: @Composable () -&gt; Unit, )</ID>
-    <ID>FunctionNaming:Color.kt$@Composable fun DynamicCoilTesterTheme( darkTheme: Boolean = false, content: @Composable () -&gt; Unit, )</ID>
-    <ID>FunctionNaming:DetectionScreen.kt$@Composable @Suppress("UnusedParameter") fun DetectionScreen( viewModel: DetectionViewModel, onNavigate: (AppRoute) -&gt; Unit, )</ID>
-    <ID>FunctionNaming:MagneticToolScreen.kt$@Composable private fun MetricCard( title: String, subtitle: String, modifier: Modifier = Modifier, onClick: () -&gt; Unit = {}, )</ID>
-    <ID>FunctionNaming:MagneticToolScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun MagneticToolScreen( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
-    <ID>FunctionNaming:Navigation.kt$@Composable fun AppNavHost( navController: NavHostController, detectionViewModel: DetectionViewModel, settingsViewModel: SettingsViewModel, )</ID>
-    <ID>FunctionNaming:SettingsScreen.kt$@Composable @Suppress("UnusedParameter") fun SettingsScreen( viewModel: SettingsViewModel, onNavigate: (AppRoute) -&gt; Unit, onBack: () -&gt; Unit = {}, )</ID>
-    <ID>FunctionNaming:SettingsScreen.kt$@Composable fun LanguageDialog( currentLanguage: String, onSelect: (String) -&gt; Unit, onDismiss: () -&gt; Unit, )</ID>
-    <ID>FunctionNaming:SettingsScreen.kt$@Composable fun SettingItem( title: String, subtitle: String, onClick: () -&gt; Unit = {}, trailing: @Composable () -&gt; Unit = {}, )</ID>
-    <ID>FunctionNaming:SettingsScreen.kt$@Composable fun SettingsSectionHeader(title: String)</ID>
-    <ID>FunctionNaming:SettingsScreen.kt$@Composable fun ThemeDialog( currentTheme: ThemeMode, onSelect: (ThemeMode) -&gt; Unit, onDismiss: () -&gt; Unit, )</ID>
-    <ID>FunctionNaming:Theme.kt$@Composable fun AppTheme(content: @Composable () -&gt; Unit)</ID>
     <ID>LongMethod:DetectionScreen.kt$@Composable @Suppress("UnusedParameter") fun DetectionScreen( viewModel: DetectionViewModel, onNavigate: (AppRoute) -&gt; Unit, )</ID>
     <ID>LongMethod:MagneticToolScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun MagneticToolScreen( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
     <ID>LongMethod:Navigation.kt$@Composable fun AppNavHost( navController: NavHostController, detectionViewModel: DetectionViewModel, settingsViewModel: SettingsViewModel, )</ID>
@@ -26,79 +14,16 @@
     <ID>LongParameterList:DetectionViewModel.kt$DetectionViewModel$( private val detectionRepository: DetectionRepository, private val configureDetectionUseCase: ConfigureDetectionUseCase, private val stopDetectionUseCase: StopDetectionUseCase, private val calibrationUseCase: CalibrationUseCase, private val setSensitivityUseCase: SetSensitivityUseCase, private val soundService: SoundService, private val hapticService: HapticService, private val settingsRepository: SettingsRepository, private val scope: CoroutineScope, )</ID>
     <ID>LongParameterList:MagneticToolScreen.kt$( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
     <ID>LongParameterList:SettingsViewModel.kt$SettingsViewModel$( private val settingsRepository: SettingsRepository, private val setSensitivityUseCase: SetSensitivityUseCase, private val setLanguageUseCase: SetLanguageUseCase, private val setThemeUseCase: SetThemeUseCase, private val setAdvancedOptionsUseCase: SetAdvancedOptionsUseCase, private val setAcThresholdUseCase: SetAcThresholdUseCase, private val setDcThresholdUseCase: SetDcThresholdUseCase, private val setFrequencyBandUseCase: SetFrequencyBandUseCase, private val setSoundVolumeUseCase: SetSoundVolumeUseCase, private val sensorProvider: DetectionRepository, private val scope: kotlinx.coroutines.CoroutineScope, )</ID>
-    <ID>MagicNumber:Color.kt$0xFF000000</ID>
-    <ID>MagicNumber:Color.kt$0xFF001D3D</ID>
-    <ID>MagicNumber:Color.kt$0xFF001F24</ID>
-    <ID>MagicNumber:Color.kt$0xFF003366</ID>
-    <ID>MagicNumber:Color.kt$0xFF00353C</ID>
-    <ID>MagicNumber:Color.kt$0xFF004B99</ID>
-    <ID>MagicNumber:Color.kt$0xFF004E58</ID>
-    <ID>MagicNumber:Color.kt$0xFF0066CC</ID>
-    <ID>MagicNumber:Color.kt$0xFF006874</ID>
-    <ID>MagicNumber:Color.kt$0xFF041F2A</ID>
-    <ID>MagicNumber:Color.kt$0xFF121212</ID>
-    <ID>MagicNumber:Color.kt$0xFF1A1C1E</ID>
-    <ID>MagicNumber:Color.kt$0xFF1C1C1E</ID>
-    <ID>MagicNumber:Color.kt$0xFF1D333C</ID>
-    <ID>MagicNumber:Color.kt$0xFF1F2023</ID>
-    <ID>MagicNumber:Color.kt$0xFF242628</ID>
-    <ID>MagicNumber:Color.kt$0xFF2C2C2E</ID>
-    <ID>MagicNumber:Color.kt$0xFF2E3033</ID>
-    <ID>MagicNumber:Color.kt$0xFF344B56</ID>
-    <ID>MagicNumber:Color.kt$0xFF3F494E</ID>
-    <ID>MagicNumber:Color.kt$0xFF410002</ID>
-    <ID>MagicNumber:Color.kt$0xFF48484A</ID>
-    <ID>MagicNumber:Color.kt$0xFF4A0000</ID>
-    <ID>MagicNumber:Color.kt$0xFF4A6572</ID>
-    <ID>MagicNumber:Color.kt$0xFF690005</ID>
-    <ID>MagicNumber:Color.kt$0xFF6F797E</ID>
-    <ID>MagicNumber:Color.kt$0xFF899399</ID>
-    <ID>MagicNumber:Color.kt$0xFF8B0000</ID>
-    <ID>MagicNumber:Color.kt$0xFF93000A</ID>
-    <ID>MagicNumber:Color.kt$0xFF9FD8E8</ID>
-    <ID>MagicNumber:Color.kt$0xFFA6D0FF</ID>
-    <ID>MagicNumber:Color.kt$0xFFB7C7D2</ID>
-    <ID>MagicNumber:Color.kt$0xFFBA1A1A</ID>
-    <ID>MagicNumber:Color.kt$0xFFBEC9CE</ID>
-    <ID>MagicNumber:Color.kt$0xFFD3E3F0</ID>
-    <ID>MagicNumber:Color.kt$0xFFD4F3FF</ID>
-    <ID>MagicNumber:Color.kt$0xFFD6E8FF</ID>
-    <ID>MagicNumber:Color.kt$0xFFDAE5EC</ID>
-    <ID>MagicNumber:Color.kt$0xFFE3E2E6</ID>
-    <ID>MagicNumber:Color.kt$0xFFFCFCFF</ID>
-    <ID>MagicNumber:Color.kt$0xFFFF3B30</ID>
-    <ID>MagicNumber:Color.kt$0xFFFF6B6B</ID>
-    <ID>MagicNumber:Color.kt$0xFFFFB4AB</ID>
-    <ID>MagicNumber:Color.kt$0xFFFFDAD6</ID>
     <ID>MagicNumber:DetectionScreen.kt$0xFFFFA500</ID>
-    <ID>MagicNumber:DetectionViewModel.kt$3</ID>
-    <ID>MagicNumber:DetectionViewModel.kt$DetectionViewModel$100</ID>
-    <ID>MagicNumber:FeedbackServices.kt$HapticService$100</ID>
-    <ID>MagicNumber:FeedbackServices.kt$HapticService$200</ID>
-    <ID>MagicNumber:FeedbackServices.kt$HapticService$50</ID>
-    <ID>MagicNumber:MagneticToolScreen.kt$0.5</ID>
     <ID>MagicNumber:MagneticToolScreen.kt$0.7f</ID>
     <ID>MagicNumber:MagneticToolScreen.kt$0xFFFF3B30</ID>
-    <ID>MagicNumber:MagneticToolScreen.kt$2000.0</ID>
-    <ID>MagicNumber:MagneticToolScreen.kt$5.0</ID>
-    <ID>MagicNumber:MagneticToolScreen.kt$50</ID>
     <ID>MagicNumber:Navigation.kt$16</ID>
     <ID>MagicNumber:Navigation.kt$2.88f</ID>
     <ID>MagicNumber:Navigation.kt$360f</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$10</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$100</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$1_000_000</ID>
     <ID>MagicNumber:SensorProvider.kt$SensorProvider$20</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$200</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$200.0</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$48.76</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$50</ID>
     <ID>MagicNumber:SensorProvider.kt$SensorProvider$64</ID>
     <ID>MagicNumber:SettingsScreen.kt$0.5</ID>
     <ID>MagicNumber:SettingsScreen.kt$150.0</ID>
-    <ID>MagicNumber:SettingsScreen.kt$5.0</ID>
-    <ID>MagicNumber:SettingsScreen.kt$50</ID>
-    <ID>MagicNumber:SettingsScreen.kt$60</ID>
     <ID>MaxLineLength:DetectionScreen.kt$DetectionStatus.CONFIRMED_AC -&gt; stringResource(org.coiltester.app.R.string.detection_ac_confirmed)</ID>
     <ID>MaxLineLength:DetectionScreen.kt$DetectionStatus.CONFIRMED_DC -&gt; stringResource(org.coiltester.app.R.string.detection_dc_confirmed)</ID>
     <ID>MaxLineLength:MagneticToolScreen.kt$Text("+", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)</ID>
