@@ -41,7 +41,7 @@ jobs:
         dependency-caching: true
 
     - name: Build Android project
-      run: ./gradlew assembleDebug --no-daemon
+      run: ./gradlew assembleDebug --no-build-cache --rerun-tasks --no-daemon
       env:
         GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2048m"
 
