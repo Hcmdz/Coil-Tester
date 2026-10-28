@@ -4,6 +4,8 @@
 /specs/
 /docs/decisions/
 /.opencode/
+/agent.m
+/agent/
 /AppIcons/
 /.claude/
 
