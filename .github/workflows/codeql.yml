@@ -40,8 +40,8 @@ jobs:
             - '**/build/**'
         dependency-caching: true
 
-    - name: Build Android project (compile Kotlin for CodeQL tracing)
-      run: ./gradlew :app:compileDebugKotlin --no-daemon
+    - name: Build Android project (compile all Kotlin for CodeQL tracing)
+      run: ./gradlew compileDebugKotlin --no-daemon
       env:
         GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2048m"
 
