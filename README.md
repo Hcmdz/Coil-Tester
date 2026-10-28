@@ -38,13 +38,15 @@ GitHub sideloading: **[Latest release](https://github.com/HcmDz/Coil_Tester/rele
 
 ## 📸 Screenshots
 
-> Screenshots will be added here. Place PNG files under `screenshots/` and update the tables below.
+### Detection (main screen)
+
+Real-time AC/DC magnetic field detection with status, distance guide, and controls.
 
 <div align="center">
 
 | Light Mode | Dark Mode |
 |---|---|
-| _(coming soon)_ | _(coming soon)_ |
+| <a href="screenshots/detection-light.jpg"><img src="screenshots/detection-light.jpg" width="270" alt="Detection screen, light mode"></a> | <a href="screenshots/detection-dark.jpg"><img src="screenshots/detection-dark.jpg" width="270" alt="Detection screen, dark mode"></a> |
 
 </div>
 
