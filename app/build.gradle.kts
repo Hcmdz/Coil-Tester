@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "org.coiltester.app"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "org.coiltester.app"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = rootProject.extra["versionCode"] as Int
         versionName = rootProject.extra["versionName"] as String
         vectorDrawables.useSupportLibrary = true

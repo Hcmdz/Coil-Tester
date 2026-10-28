@@ -7,16 +7,16 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == "com.android.application" || requested.id.id == "com.android.library") {
-                useModule("com.android.tools.build:gradle:8.5.0")
+                useModule("com.android.tools.build:gradle:8.7.3")
             }
             if (requested.id.id == "org.jetbrains.kotlin.android" || requested.id.id == "org.jetbrains.kotlin.multiplatform") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.0")
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
             }
             if (requested.id.id == "org.jetbrains.kotlin.plugin.compose") {
-                useModule("org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.0.0")
+                useModule("org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.1.0")
             }
             if (requested.id.id == "com.google.devtools.ksp") {
-                useModule("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.0.0-1.0.24")
+                useModule("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.1.0-1.0.29")
             }
         }
     }

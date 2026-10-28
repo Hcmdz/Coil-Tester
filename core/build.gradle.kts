@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace = "org.coiltester.core"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
     }
 }
 
