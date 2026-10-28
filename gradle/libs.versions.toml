@@ -17,7 +17,7 @@ turbine = "1.2.0"
 assertk = "0.28.1"
 robolectric = "4.14.1"
 compose_ui_test = "1.7.5"
-jacoco = "0.8.12"
+jacoco = "0.8.15"
 detekt = "1.23.7"
 ktlint = "12.2.0"
 
