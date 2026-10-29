@@ -30,7 +30,7 @@
 
 [![GitHub](https://img.shields.io/badge/Get_it_on-GitHub-black.svg?logo=github)](https://github.com/HcmDz/Coil_Tester/releases/latest)
 
-GitHub sideloading: **[Latest release](https://github.com/HcmDz/Coil_Tester/releases/latest)** (`app-debug.apk` / release APK, ~MB, arm64-v8a).
+GitHub sideloading: **[Latest release](https://github.com/HcmDz/Coil_Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.7 MB, universal).
 
 - Requires Android 7.0+ (API 24).
 - Verify integrity: `sha256sum -c CoilTester-release.apk.sha256` (sidecar next to the APK).
@@ -68,7 +68,7 @@ Real-time AC/DC magnetic field detection with status, distance guide, and contro
 ### Settings & UX
 - **Trilingual UI** — French (default), English, Arabic with full RTL support.
 - **Theme** — Light, Dark, Pure Black (AMOLED), or follow system.
-- **FLAG_SECURE** on the detection screen prevents screenshots and screen recording of coil measurements.
+- **Fullscreen** — immersive display with transparent status/navigation bars.
 
 ### Privacy
 - **100% offline** — no `INTERNET` permission, no accounts, no tracking, no analytics.
@@ -83,7 +83,7 @@ Real-time AC/DC magnetic field detection with status, distance guide, and contro
 Multi-module project (`:app`, `:core`, `:data`, `:build-logic:convention`) with Clean Architecture + MVI:
 
 - **Domain** (`core`) — pure Kotlin, no Android dependencies, testable on JVM.
-- **Data** (`data`) — Room (single source of truth) + DataStore (Proto) for settings.
+- **Data** (`data`) — Room (single source of truth) + DataStore (Preferences) for settings.
 - **UI** (`app`) — Jetpack Compose + Material 3, adaptive layouts, MVI ViewModels with `StateFlow`.
 - Typed errors via `Result<T, E>` everywhere; cancellation never swallowed.
 
@@ -112,11 +112,11 @@ Exact versions from `gradle/libs.versions.toml`:
 
 | Control | Implementation |
 |---|---|
-| Screenshot protection | `FLAG_SECURE` on the detection screen |
 | Network security | Cleartext disabled (`android:usesCleartextTraffic="false"`, NSC), no `INTERNET` permission |
 | Backup disabled | `allowBackup="false"`, `data_extraction_rules.xml` / `backup_rules.xml` exclude Room DB and DataStore |
 | Minification | R8 full mode on release builds (`isMinifyEnabled = true`, `isShrinkResources = true`) |
 | Code quality | Detekt 1.23.7 + Ktlint 12.2.0 in CI |
+| Licensing | Licensee plugin gates dependencies (Apache-2.0 only) |
 
 ### Permissions
 
