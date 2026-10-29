@@ -51,6 +51,8 @@
     <string name="settings_about_subtitle">معلومات الإصدار والتراخيص</string>
     <string name="settings_privacy">سياسة الخصوصية</string>
     <string name="settings_terms">شروط الخدمة</string>
+    <string name="settings_open_source_notices">إشعارات مفتوحة المصدر</string>
+    <string name="settings_open_source_notices_close">إغلاق</string>
 
     <!-- Sensitivity -->
     <string name="sensitivity_low">منخفض</string>

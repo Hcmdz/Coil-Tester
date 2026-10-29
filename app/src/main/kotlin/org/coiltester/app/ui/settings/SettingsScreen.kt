@@ -295,6 +295,7 @@ fun SettingsScreen(
 
     var showLanguageDialog by remember { mutableStateOf(false) }
     var showThemeDialog by remember { mutableStateOf(false) }
+    var showNoticesDialog by remember { mutableStateOf(false) }
 
     Column(
         modifier =
@@ -721,6 +722,11 @@ fun SettingsScreen(
                     subtitle = "hcmdz.github.io/coil-tester/terms/",
                     onClick = { openUrl("https://hcmdz.github.io/coil-tester/terms/") },
                 )
+                SettingItem(
+                    title = stringResource(org.coiltester.app.R.string.settings_open_source_notices),
+                    subtitle = "Apache-2.0",
+                    onClick = { showNoticesDialog = true },
+                )
             }
         }
 
@@ -743,6 +749,29 @@ fun SettingsScreen(
                     showThemeDialog = false
                 },
                 onDismiss = { showThemeDialog = false },
+            )
+        }
+
+        if (showNoticesDialog) {
+            val notices = remember {
+                context.resources.openRawResource(org.coiltester.app.R.raw.apache_2_0)
+                    .bufferedReader().use { it.readText() }
+            }
+            AlertDialog(
+                onDismissRequest = { showNoticesDialog = false },
+                title = { Text(stringResource(org.coiltester.app.R.string.settings_open_source_notices)) },
+                text = {
+                    Text(
+                        notices,
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier.verticalScroll(rememberScrollState()),
+                    )
+                },
+                confirmButton = {
+                    TextButton(onClick = { showNoticesDialog = false }) {
+                        Text(stringResource(org.coiltester.app.R.string.settings_open_source_notices_close))
+                    }
+                },
             )
         }
     }

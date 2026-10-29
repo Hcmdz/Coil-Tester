@@ -51,6 +51,8 @@
     <string name="settings_about_subtitle">Version info and licenses</string>
     <string name="settings_privacy">Privacy Policy</string>
     <string name="settings_terms">Terms of Service</string>
+    <string name="settings_open_source_notices">Open source notices</string>
+    <string name="settings_open_source_notices_close">Close</string>
     <string name="settings_general">General</string>
     <string name="settings_feedback">Haptic and Sound Feedback</string>
     <string name="settings_advanced">Advanced Options</string>

@@ -51,6 +51,8 @@
     <string name="settings_about_subtitle">Infos version et licences</string>
     <string name="settings_privacy">Politique de confidentialité</string>
     <string name="settings_terms">Conditions d\'utilisation</string>
+    <string name="settings_open_source_notices">Licences open source</string>
+    <string name="settings_open_source_notices_close">Fermer</string>
     <string name="settings_general">Général</string>
     <string name="settings_feedback">Retour haptique et sonore</string>
     <string name="settings_advanced">Options avancées</string>
