@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.jacoco)
+    id("app.cash.licensee") version "1.13.0"
 }
 
 android {
@@ -169,4 +170,8 @@ composeCompiler {
     reportsDestination = layout.buildDirectory.dir("compose_compiler")
     metricsDestination = layout.buildDirectory.dir("compose_compiler")
     stabilityConfigurationFile = file("compose-stability.conf")
+}
+
+licensee {
+    allow("Apache-2.0")
 }
