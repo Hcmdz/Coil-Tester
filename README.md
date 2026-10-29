@@ -2,14 +2,29 @@
 
 <a id="readme-top"></a>
 
-[![CoilTester Banner](docs/assets/social-preview.png)](https://github.com/HcmDz/Coil_Tester/releases/latest)
+<div align="center">
+   <a href="https://github.com/Hcmdz/Coil_Tester/releases">
+      <img src="get-it-on-github-v2.png" width="168" height="50" alt="Get it on GitHub">
+   </a>
+   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Hcmdz/Coil_Tester/">
+      <img src="get-it-on-obtainium-v2.png" width="168" height="50" alt="Get it on Obtainium">
+   </a>
+</div>
+
+<br />
 
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg?logo=android)](https://www.android.com)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-purple.svg?logo=kotlin)](https://kotlinlang.org)
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](#)
 [![TargetSDK](https://img.shields.io/badge/TargetSDK-35-blue.svg)](#)
-[![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/HcmDz/Coil_Tester?include_prereleases)](https://github.com/HcmDz/Coil_Tester/releases/latest)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Release](https://img.shields.io/github/v/release/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/HcmDz/Coil_Tester/total)](https://github.com/HcmDz/Coil_Tester/releases)
+[![Stars](https://img.shields.io/github/stars/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/stargazers)
+[![Forks](https://img.shields.io/github/forks/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/network/members)
+[![Compose M3](https://img.shields.io/badge/Jetpack_Compose-Material_3-4285F4.svg?logo=jetpackcompose)](https://developer.android.com/jetpack/compose)
+
+[![CoilTester Banner](docs/assets/social-preview.png)](https://github.com/HcmDz/Coil_Tester/releases/latest)
 
 **Coil detection, made measurable.** CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
 
