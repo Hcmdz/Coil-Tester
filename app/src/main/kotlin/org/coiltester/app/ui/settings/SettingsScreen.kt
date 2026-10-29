@@ -52,6 +52,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.coiltester.app.BuildConfig
 import org.coiltester.app.di.AppRoute
 import org.coiltester.app.platform.SoundService
 import org.coiltester.app.viewmodel.SettingsIntent
@@ -636,7 +637,7 @@ fun SettingsScreen(
             }
         }
 
-        if (settings.advancedOptionsEnabled) {
+        if (settings.advancedOptionsEnabled && BuildConfig.DEBUG) {
             Spacer(modifier = Modifier.height(16.dp))
             SettingsSectionHeader(title = "Test Injection")
             Card(
@@ -695,6 +696,10 @@ fun SettingsScreen(
                 SettingItem(
                     title = "Version",
                     subtitle = "1.0.0",
+                )
+                SettingItem(
+                    title = "Author",
+                    subtitle = "HcmDZ",
                 )
                 SettingItem(
                     title = "Licence",
