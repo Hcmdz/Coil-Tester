@@ -30,9 +30,9 @@ Coil detection, made measurable. CoilTester turns your phone's magnetometer into
 <p align="center">
   <a href="#-screenshots">View Screenshots</a>
   ·
-  <a href="https://github.com/HcmDz/Coil-Tester/issues/new?labels=bug">Report Bug</a>
+  <a href="https://github.com/Hcmdz/Coil-Tester/issues/new?labels=bug">Report Bug</a>
   ·
-  <a href="https://github.com/HcmDz/Coil-Tester/issues/new?labels=enhancement">Request Feature</a>
+  <a href="https://github.com/Hcmdz/Coil-Tester/issues/new?labels=enhancement">Request Feature</a>
 </p>
 
 - **Package**: `org.coiltester.app`
@@ -42,9 +42,9 @@ Coil detection, made measurable. CoilTester turns your phone's magnetometer into
 
 ## 📦 Downloads
 
-[![GitHub](https://img.shields.io/badge/Get_it_on-GitHub-black.svg?logo=github)](https://github.com/HcmDz/Coil-Tester/releases/latest)
+[![GitHub](https://img.shields.io/badge/Get_it_on-GitHub-black.svg?logo=github)](https://github.com/Hcmdz/Coil-Tester/releases/latest)
 
-GitHub sideloading: **[Latest release](https://github.com/HcmDz/Coil-Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.7 MB, universal).
+GitHub sideloading: **[Latest release](https://github.com/Hcmdz/Coil-Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.7 MB, universal).
 
 - Requires Android 7.0+ (API 24).
 - Verify integrity: `sha256sum -c CoilTester-release.apk.sha256` (sidecar next to the APK).
@@ -165,8 +165,8 @@ Entry points: `CoilTesterApplication` (Application), `MainActivity` (launcher).
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/HcmDz/Coil_Tester.git
-   cd Coil_Tester
+   git clone https://github.com/Hcmdz/Coil-Tester.git
+   cd Coil-Tester
    ```
 
 2. **Build the project**:
@@ -250,7 +250,7 @@ Current release APK size: measured in CI (see GitHub Releases for the published 
 - Initial release: AC/DC coil detection, calibration, distance guide, trilingual UI (FR/EN/AR), Material 3 theming.
 - Build: AGP 8.7.3, Kotlin 2.1.0, Compose BOM 2024.12.01, SDK 35.
 
-Full history in [GitHub Releases](https://github.com/HcmDz/Coil_Tester/releases).
+Full history in [GitHub Releases](https://github.com/Hcmdz/Coil-Tester/releases).
 
 ---
 
@@ -280,7 +280,7 @@ The application name "CoilTester", along with all original branding artwork, log
 - [ ] Refactor long composables (DetectionScreen, MagneticToolScreen)
 - [ ] F-Droid / Play Store publication
 
-See the [open issues](https://github.com/HcmDz/Coil_Tester/issues) for proposed features and known issues.
+See the [open issues](https://github.com/Hcmdz/Coil-Tester/issues) for proposed features and known issues.
 
 ---
 

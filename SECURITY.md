@@ -14,7 +14,7 @@ believe you have found a security issue (e.g., a way to extract data from the de
 a flaw in the sensor permission flow, or a build/signing weakness), please report it
 privately rather than opening a public issue.
 
-- **Email**: open a private report via GitHub's [private vulnerability reporting](https://github.com/HcmDz/Coil_Tester/security/advisories/new).
+- **Email**: open a private report via GitHub's [private vulnerability reporting](https://github.com/Hcmdz/Coil-Tester/security/advisories/new).
 - **Response time**: best effort within 7 days.
 - **Disclosure**: coordinated disclosure preferred; please allow reasonable time to fix before public disclosure.
 

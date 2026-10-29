@@ -31,4 +31,4 @@ These terms may be updated. Continued use after changes constitutes acceptance.
 
 ## Contact
 
-https://github.com/HcmDz/Coil_Tester/issues
+https://github.com/Hcmdz/Coil-Tester/issues

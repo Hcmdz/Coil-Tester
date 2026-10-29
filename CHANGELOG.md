@@ -2,7 +2,7 @@
 
 All notable changes to CoilTester are documented in this file. Versions follow
 [Semantic Versioning](https://semver.org/). Full release history is available on
-[GitHub Releases](https://github.com/HcmDz/Coil_Tester/releases).
+[GitHub Releases](https://github.com/Hcmdz/Coil-Tester/releases).
 
 ## [Unreleased]
 
@@ -55,5 +55,5 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - Compose BOM 2024.12.01, Material 3 1.3.1.
 - Koin 4.0.0, Room 2.6.1, DataStore 1.1.1, Coroutines 1.9.0.
 
-[Unreleased]: https://github.com/HcmDz/Coil_Tester/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/HcmDz/Coil_Tester/releases/tag/v1.0.0
+[Unreleased]: https://github.com/Hcmdz/Coil-Tester/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Hcmdz/Coil-Tester/releases/tag/v1.0.0

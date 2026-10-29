@@ -39,4 +39,4 @@ excluded from Android backup.
 ## Contact
 
 Report privacy questions via GitHub Issues:
-https://github.com/HcmDz/Coil_Tester/issues
+https://github.com/Hcmdz/Coil-Tester/issues
