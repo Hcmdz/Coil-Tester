@@ -2,13 +2,13 @@
 
 <a id="readme-top"></a>
 
-[![CoilTester](docs/assets/social-preview.png)](https://github.com/Hcmdz/Coil_Tester/releases/latest)
+[![CoilTester](docs/assets/social-preview.png)](https://github.com/Hcmdz/Coil-Tester/releases/latest)
 
 <div align="center">
-   <a href="https://github.com/Hcmdz/Coil_Tester/releases">
+   <a href="https://github.com/Hcmdz/Coil-Tester/releases">
       <img src="get-it-on-github-v2.png" width="168" height="50" alt="Get it on GitHub">
    </a>
-   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Hcmdz/Coil_Tester/">
+   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/Hcmdz/Coil-Tester/">
       <img src="get-it-on-obtainium-v2.png" width="168" height="50" alt="Get it on Obtainium">
    </a>
 </div>
@@ -20,10 +20,10 @@
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](#)
 [![TargetSDK](https://img.shields.io/badge/TargetSDK-35-blue.svg)](#)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Release](https://img.shields.io/github/v/release/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil-Tester/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/HcmDz/Coil_Tester/total)](https://github.com/HcmDz/Coil-Tester/releases)
-[![Stars](https://img.shields.io/github/stars/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil-Tester/stargazers)
-[![Forks](https://img.shields.io/github/forks/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil-Tester/network/members)
+[![Release](https://img.shields.io/github/v/release/HcmDz/Coil-Tester)](https://github.com/HcmDz/Coil-Tester/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/HcmDz/Coil-Tester/total)](https://github.com/HcmDz/Coil-Tester/releases)
+[![Stars](https://img.shields.io/github/stars/HcmDz/Coil-Tester)](https://github.com/HcmDz/Coil-Tester/stargazers)
+[![Forks](https://img.shields.io/github/forks/HcmDz/Coil-Tester)](https://github.com/HcmDz/Coil-Tester/network/members)
 [![Compose M3](https://img.shields.io/badge/Jetpack_Compose-Material_3-4285F4.svg?logo=jetpackcompose)](https://developer.android.com/jetpack/compose)
 
 Coil detection, made measurable. CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
@@ -31,9 +31,9 @@ Coil detection, made measurable. CoilTester turns your phone's magnetometer into
 <p align="center">
   <a href="#-screenshots">View Screenshots</a>
   ·
-  <a href="https://github.com/HcmDz/Coil_Tester/issues/new?labels=bug">Report Bug</a>
+  <a href="https://github.com/HcmDz/Coil-Tester/issues/new?labels=bug">Report Bug</a>
   ·
-  <a href="https://github.com/HcmDz/Coil_Tester/issues/new?labels=enhancement">Request Feature</a>
+  <a href="https://github.com/HcmDz/Coil-Tester/issues/new?labels=enhancement">Request Feature</a>
 </p>
 
 - **Package**: `org.coiltester.app`
@@ -43,9 +43,9 @@ Coil detection, made measurable. CoilTester turns your phone's magnetometer into
 
 ## 📦 Downloads
 
-[![GitHub](https://img.shields.io/badge/Get_it_on-GitHub-black.svg?logo=github)](https://github.com/HcmDz/Coil_Tester/releases/latest)
+[![GitHub](https://img.shields.io/badge/Get_it_on-GitHub-black.svg?logo=github)](https://github.com/HcmDz/Coil-Tester/releases/latest)
 
-GitHub sideloading: **[Latest release](https://github.com/HcmDz/Coil_Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.7 MB, universal).
+GitHub sideloading: **[Latest release](https://github.com/HcmDz/Coil-Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.7 MB, universal).
 
 - Requires Android 7.0+ (API 24).
 - Verify integrity: `sha256sum -c CoilTester-release.apk.sha256` (sidecar next to the APK).
