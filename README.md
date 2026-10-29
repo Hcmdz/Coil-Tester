@@ -118,7 +118,7 @@ Exact versions from `gradle/libs.versions.toml`:
 | **UI** | Navigation Compose | 2.8.5 |
 | **DI** | Koin | 4.0.0 |
 | **Database** | Room | 2.6.1 |
-| **Persistence** | DataStore (Proto) | 1.1.1 |
+| **Persistence** | DataStore (Preferences) | 1.1.1 |
 | **Async** | Kotlin Coroutines & Flow | 1.9.0 |
 | **Serialization** | kotlinx-serialization | 1.7.3 |
 
