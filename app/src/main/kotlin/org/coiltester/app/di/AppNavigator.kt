@@ -36,6 +36,7 @@ sealed interface AppRoute {
     data object About : AppRoute
 
 fun toRouteString(): String {
+        // codeql[java/local-variable-is-never-read]
         return when (this) {
             is Detection -> "detection"
             is Settings -> "settings"

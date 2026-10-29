@@ -21,7 +21,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
-            // noinspection Deprecation
+            // codeql[java/deprecated-call]
             vibrator.vibrate(50)
         }
     }
@@ -34,7 +34,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
-            // noinspection Deprecation
+            // codeql[java/deprecated-call]
             vibrator.vibrate(50)
         }
     }
@@ -47,7 +47,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createWaveform(longArrayOf(0, 100, 50, 100), -1)
             vibrator.vibrate(effect)
         } else {
-            // noinspection Deprecation
+            // codeql[java/deprecated-call]
             vibrator.vibrate(200)
         }
     }
