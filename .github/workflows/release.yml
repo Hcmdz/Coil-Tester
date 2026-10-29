@@ -31,31 +31,42 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Decode keystore
+        run: echo "${{ secrets.KEYSTORE_FILE }}" | base64 -d > $RUNNER_TEMP/release.jks
+
       - name: Run tests
         run: ./gradlew test --no-daemon
 
       - name: Build release APK
-        run: ./gradlew assembleRelease --no-daemon
         env:
-          KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          STORE_PW: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEY_PW: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          printf 'RELEASE_STORE_FILE=%s\n' "$RUNNER_TEMP/release.jks" >> ~/.gradle/gradle.properties
+          printf 'RELEASE_STORE_[REDACTED:password] "$STORE_PW" >> ~/.gradle/gradle.properties
+          printf 'RELEASE_KEY_ALIAS=%s\n' "$KEY_ALIAS" >> ~/.gradle/gradle.properties
+          printf 'RELEASE_KEY_[REDACTED:password] "$KEY_PW" >> ~/.gradle/gradle.properties
+          ./gradlew assembleRelease --no-daemon
 
       - name: Build release AAB
-        run: ./gradlew bundleRelease --no-daemon
         env:
-          KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          STORE_PW: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEY_PW: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          printf 'RELEASE_STORE_FILE=%s\n' "$RUNNER_TEMP/release.jks" >> ~/.gradle/gradle.properties
+          printf 'RELEASE_STORE_[REDACTED:password] "$STORE_PW" >> ~/.gradle/gradle.properties
+          printf 'RELEASE_KEY_ALIAS=%s\n' "$KEY_ALIAS" >> ~/.gradle/gradle.properties
+          printf 'RELEASE_KEY_[REDACTED:password] "$KEY_PW" >> ~/.gradle/gradle.properties
+          ./gradlew bundleRelease --no-daemon
         continue-on-error: true
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631
         with:
           files: |
-            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/release/app-release.apk
             app/build/outputs/bundle/release/*.aab
           generate_release_notes: true
           draft: false

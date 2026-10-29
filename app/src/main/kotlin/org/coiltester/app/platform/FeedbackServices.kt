@@ -13,31 +13,31 @@ class HapticService(private val context: Context) {
 
     private val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
-    @Suppress("UnusedParameter")
+    @Suppress("DEPRECATION", "UnusedParameter")
     fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
-            @Suppress("DEPRECATION")
             vibrator.vibrate(50)
         }
     }
 
+    @Suppress("DEPRECATION")
     fun triggerCalibrationFeedback() {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
-            @Suppress("DEPRECATION")
             vibrator.vibrate(50)
         }
     }
 
+    @Suppress("DEPRECATION")
     fun triggerErrorFeedback() {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
@@ -45,7 +45,6 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createWaveform(longArrayOf(0, 100, 50, 100), -1)
             vibrator.vibrate(effect)
         } else {
-            @Suppress("DEPRECATION")
             vibrator.vibrate(200)
         }
     }

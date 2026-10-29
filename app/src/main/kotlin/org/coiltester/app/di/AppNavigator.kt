@@ -35,6 +35,7 @@ sealed interface AppRoute {
 
     data object About : AppRoute
 
+@Suppress("unused")
     fun toRouteString(): String =
         when (this) {
             is Detection -> "detection"
