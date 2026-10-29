@@ -207,6 +207,68 @@ fun LanguageDialog(
 }
 
 @Composable
+fun SensitivityDialog(
+    currentSensitivity: Sensitivity,
+    onSelect: (Sensitivity) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                text = stringResource(org.coiltester.app.R.string.settings_sensitivity),
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.SemiBold,
+            )
+        },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                listOf(
+                    Sensitivity.LOW to stringResource(org.coiltester.app.R.string.sensitivity_low),
+                    Sensitivity.MEDIUM to stringResource(org.coiltester.app.R.string.sensitivity_medium),
+                    Sensitivity.HIGH to stringResource(org.coiltester.app.R.string.sensitivity_high),
+                ).forEach { (sens, label) ->
+                    TextButton(
+                        onClick = { onSelect(sens) },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp),
+                    ) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            Text(
+                                text = label,
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurface,
+                            )
+                            if (currentSensitivity == sens) {
+                                Icon(
+                                    imageVector = Icons.Filled.Check,
+                                    contentDescription = "Selected",
+                                    tint = MaterialTheme.colorScheme.primary,
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text(
+                    text = "OK",
+                    color = MaterialTheme.colorScheme.primary,
+                )
+            }
+        },
+        shape = RoundedCornerShape(28.dp),
+        containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+    )
+}
+
+@Composable
 fun ThemeDialog(
     currentTheme: ThemeMode,
     onSelect: (ThemeMode) -> Unit,
@@ -296,6 +358,7 @@ fun SettingsScreen(
     var showLanguageDialog by remember { mutableStateOf(false) }
     var showThemeDialog by remember { mutableStateOf(false) }
     var showNoticesDialog by remember { mutableStateOf(false) }
+    var showSensitivityDialog by remember { mutableStateOf(false) }
 
     Column(
         modifier =
@@ -436,7 +499,7 @@ fun SettingsScreen(
                     Sensitivity.MEDIUM -> stringResource(org.coiltester.app.R.string.sensitivity_medium)
                     Sensitivity.HIGH -> stringResource(org.coiltester.app.R.string.sensitivity_high)
                 },
-            onClick = {},
+            onClick = { showSensitivityDialog = true },
         ) {
             Icon(
                 imageVector = Icons.Filled.Check,
@@ -749,6 +812,17 @@ fun SettingsScreen(
                     showThemeDialog = false
                 },
                 onDismiss = { showThemeDialog = false },
+            )
+        }
+
+        if (showSensitivityDialog) {
+            SensitivityDialog(
+                currentSensitivity = settings.sensitivity,
+                onSelect = { s ->
+                    viewModel.sendIntent(SettingsIntent.SetSensitivity(s))
+                    showSensitivityDialog = false
+                },
+                onDismiss = { showSensitivityDialog = false },
             )
         }
 
