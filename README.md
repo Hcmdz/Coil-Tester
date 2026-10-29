@@ -2,6 +2,8 @@
 
 <a id="readme-top"></a>
 
+[![CoilTester](docs/assets/social-preview.png)](https://github.com/Hcmdz/Coil_Tester/releases/latest)
+
 <div align="center">
    <a href="https://github.com/Hcmdz/Coil_Tester/releases">
       <img src="get-it-on-github-v2.png" width="168" height="50" alt="Get it on GitHub">
@@ -24,9 +26,7 @@
 [![Forks](https://img.shields.io/github/forks/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/network/members)
 [![Compose M3](https://img.shields.io/badge/Jetpack_Compose-Material_3-4285F4.svg?logo=jetpackcompose)](https://developer.android.com/jetpack/compose)
 
-[![CoilTester Banner](docs/assets/social-preview.png)](https://github.com/HcmDz/Coil_Tester/releases/latest)
-
-**Coil detection, made measurable.** CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
+Coil detection, made measurable. CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
 
 <p align="center">
   <a href="#-screenshots">View Screenshots</a>
