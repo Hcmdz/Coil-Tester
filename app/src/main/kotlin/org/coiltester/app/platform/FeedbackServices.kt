@@ -45,6 +45,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createWaveform(longArrayOf(0, 100, 50, 100), -1)
             vibrator.vibrate(effect)
         } else {
+            @Suppress("DEPRECATION")
             vibrator.vibrate(200)
         }
     }

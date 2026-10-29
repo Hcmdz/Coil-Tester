@@ -35,13 +35,13 @@ sealed interface AppRoute {
 
     data object About : AppRoute
 
-@Suppress("unused")
-    fun toRouteString(): String =
-        when (this) {
+fun toRouteString(): String {
+        return when (this) {
             is Detection -> "detection"
             is Settings -> "settings"
             is About -> "about"
         }
+    }
 
     companion object {
         fun fromRouteString(route: String): AppRoute? {
