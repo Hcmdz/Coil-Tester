@@ -10,9 +10,11 @@ import org.coiltester.core.repository.DetectionRepository
  * Implements band-pass filtering for 50/60Hz AC detection and DC offset detection.
  */
 class DetectionEngine(
-    private val config: DetectionConfig,
-    private val calibration: CalibrationData
+    config: DetectionConfig,
+    calibration: CalibrationData
 ) {
+    private var config: DetectionConfig = config
+    private var calibration: CalibrationData = calibration
     /** Current detection state */
     private val _state = MutableStateFlow(DetectionResult(
         status = DetectionStatus.IDLE,
@@ -157,7 +159,13 @@ class DetectionEngine(
     }
 
     fun updateConfig(newConfig: DetectionConfig) {
-        // Config changes apply to next readings
+        config = newConfig
+        _state.value = _state.value.copy(config = newConfig)
+    }
+
+    fun updateCalibration(newCalibration: CalibrationData) {
+        calibration = newCalibration
+        _state.value = _state.value.copy(calibration = newCalibration)
     }
 
     fun reset() {

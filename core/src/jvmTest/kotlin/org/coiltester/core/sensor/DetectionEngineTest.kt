@@ -85,13 +85,21 @@ class DetectionEngineTest {
     }
 
     @Test
-    @DisplayName("Should update config")
-    fun updatesConfig() {
+    @DisplayName("Should update config when updateConfig is called")
+    fun updatesConfigActually() {
         val engine = DetectionEngine(defaultConfig, defaultCalibration)
         val newConfig = DetectionConfig.fromSensitivity(Sensitivity.HIGH)
         engine.updateConfig(newConfig)
-        // Config is updated (no crash)
-        assertNotNull(engine.state.value)
+        // Config should be updated in state
+        assertEquals(newConfig, engine.state.value.config)
+        // Subsequent readings should use the new config
+        repeat(20) {
+            engine.onSensorReading(MagneticFieldReading(0.0, 0.0, 10.0))
+        }
+        // The new config's thresholds should be used
+        val state = engine.state.value
+        // With HIGH sensitivity, dcThreshold is 200.0, so 10.0 should be below threshold
+        assertTrue(state.dcMean > 0)
     }
 
     @Test

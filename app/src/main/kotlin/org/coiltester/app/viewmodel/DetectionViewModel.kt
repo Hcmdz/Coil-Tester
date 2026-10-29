@@ -144,7 +144,7 @@ class DetectionViewModel(
         if (_state.value.isDetecting) {
             return
         }
-        engine = DetectionEngine(config, CalibrationData())
+        engine = DetectionEngine(config, _state.value.calibration ?: CalibrationData())
         scope.launch {
             val result = configureDetectionUseCase()
             result
@@ -180,11 +180,12 @@ class DetectionViewModel(
     }
 
     private fun onCalibrate() {
-        engine = DetectionEngine(_state.value.config, CalibrationData())
+        engine = DetectionEngine(_state.value.config, _state.value.calibration ?: CalibrationData())
         _state.update { it.copy(status = DetectionStatus.CALIBRATING) }
         scope.launch {
             calibrationUseCase()
                 .onOk { calibration ->
+                    engine?.updateCalibration(calibration)
                     _state.update { it.copy(calibration = calibration, status = DetectionStatus.DETECTING) }
                     soundService.playCalibrationSound()
                     hapticService.triggerCalibrationFeedback()
