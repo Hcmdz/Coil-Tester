@@ -13,7 +13,7 @@ class HapticService(private val context: Context) {
 
     private val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
-    @Suppress("DEPRECATION", "UnusedParameter")
+    @Suppress("DEPRECATION", "java/deprecated-call", "UnusedParameter")
     fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
@@ -21,6 +21,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
+            // noinspection Deprecation
             vibrator.vibrate(50)
         }
     }
@@ -33,6 +34,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
+            // noinspection Deprecation
             vibrator.vibrate(50)
         }
     }
@@ -45,7 +47,7 @@ class HapticService(private val context: Context) {
             val effect = VibrationEffect.createWaveform(longArrayOf(0, 100, 50, 100), -1)
             vibrator.vibrate(effect)
         } else {
-            @Suppress("DEPRECATION")
+            // noinspection Deprecation
             vibrator.vibrate(200)
         }
     }
