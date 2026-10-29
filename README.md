@@ -20,10 +20,10 @@
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](#)
 [![TargetSDK](https://img.shields.io/badge/TargetSDK-35-blue.svg)](#)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Release](https://img.shields.io/github/v/release/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/HcmDz/Coil_Tester/total)](https://github.com/HcmDz/Coil_Tester/releases)
-[![Stars](https://img.shields.io/github/stars/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/stargazers)
-[![Forks](https://img.shields.io/github/forks/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil_Tester/network/members)
+[![Release](https://img.shields.io/github/v/release/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil-Tester/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/HcmDz/Coil_Tester/total)](https://github.com/HcmDz/Coil-Tester/releases)
+[![Stars](https://img.shields.io/github/stars/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil-Tester/stargazers)
+[![Forks](https://img.shields.io/github/forks/HcmDz/Coil_Tester)](https://github.com/HcmDz/Coil-Tester/network/members)
 [![Compose M3](https://img.shields.io/badge/Jetpack_Compose-Material_3-4285F4.svg?logo=jetpackcompose)](https://developer.android.com/jetpack/compose)
 
 Coil detection, made measurable. CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
