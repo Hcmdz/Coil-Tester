@@ -57,7 +57,7 @@ jobs:
         run: ./gradlew assembleDebug --no-daemon --parallel
 
       - name: Upload APK
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: coiltester-debug-${{ github.sha }}
           path: app/build/outputs/apk/debug/app-debug.apk
@@ -65,7 +65,7 @@ jobs:
 
       - name: Upload lint results
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: lint-results
           path: app/build/reports/lint-results-*.html
