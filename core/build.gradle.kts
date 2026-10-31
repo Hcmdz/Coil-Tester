@@ -42,6 +42,7 @@ kotlin {
                 implementation(libs.turbine)
                 implementation(libs.kotlinx.coroutines.test)
                 runtimeOnly(libs.junit.jupiter)
+                runtimeOnly(libs.junit.platform.launcher)
             }
         }
         val androidMain by getting {

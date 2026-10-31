@@ -123,6 +123,7 @@ dependencies {
     testImplementation(libs.robolectric)
     testImplementation(libs.kotlinx.coroutines.test)
     testRuntimeOnly(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.platform.launcher)
 
     androidTestImplementation(libs.compose.ui.test)
     androidTestImplementation(libs.compose.ui.test.manifest)
