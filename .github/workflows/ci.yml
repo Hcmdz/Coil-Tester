@@ -40,21 +40,21 @@ jobs:
         run: chmod +x gradlew
 
       - name: Run unit tests
-        run: ./gradlew test --no-daemon --stacktrace
+        run: ./gradlew test --no-daemon --parallel --stacktrace
 
       - name: Run lint
-        run: ./gradlew lint --no-daemon
+        run: ./gradlew lint --no-daemon --parallel
 
       - name: Run detekt
-        run: ./gradlew detekt --no-daemon
+        run: ./gradlew detekt --no-daemon --parallel
         continue-on-error: true
 
       - name: Run ktlint
-        run: ./gradlew ktlintCheck --no-daemon
+        run: ./gradlew ktlintCheck --no-daemon --parallel
         continue-on-error: true
 
       - name: Build debug APK
-        run: ./gradlew assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon --parallel
 
       - name: Upload APK
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
