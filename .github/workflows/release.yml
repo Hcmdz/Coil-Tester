@@ -63,7 +63,7 @@ jobs:
         continue-on-error: true
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
         with:
           files: |
             app/build/outputs/apk/release/app-release.apk
