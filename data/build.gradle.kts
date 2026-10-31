@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.detekt)
     id("com.android.library")
-    alias(libs.plugins.ksp)
+    // id("com.google.devtools.ksp")  // KSP 2.3.12 incompatible with AGP 8.7.3
 }
 
 android {
@@ -59,17 +59,17 @@ dependencies {
     testRuntimeOnly(libs.junit.jupiter)
     androidTestImplementation(libs.room.testing)
     androidTestImplementation(libs.robolectric)
-    ksp(libs.room.compiler)
+    annotationProcessor(libs.room.compiler)
 }
 
-ksp {
-    arg("room.schemaLocation", "$projectDir/schemas")
-    arg("room.incremental", "true")
-}
+// ksp {
+//     arg("room.schemaLocation", "$projectDir/schemas")
+//     arg("room.incremental", "true")
+// }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        freeCompilerArgs += listOf(
+    compilerOptions {
+        freeCompilerArgs.addAll(
             "-Xopt-in=kotlin.RequiresOptIn",
             "-Xjsr305=strict"
         )

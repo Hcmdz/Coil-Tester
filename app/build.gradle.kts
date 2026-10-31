@@ -41,7 +41,7 @@ android {
         }
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1,LICENSE,NOTICE}/*"
         }
@@ -72,13 +72,14 @@ android {
     }
 
     // Kotlin compiler options
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs +=
-            listOf(
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+            freeCompilerArgs.addAll(
                 "-Xopt-in=kotlin.RequiresOptIn",
                 "-Xjsr305=strict",
             )
+        }
     }
 
     // Version properties (already set from rootProject.extra in defaultConfig)
@@ -170,7 +171,7 @@ tasks.register<JacocoReport>("jacocoTestReport") {
 composeCompiler {
     reportsDestination = layout.buildDirectory.dir("compose_compiler")
     metricsDestination = layout.buildDirectory.dir("compose_compiler")
-    stabilityConfigurationFile = file("compose-stability.conf")
+    stabilityConfigurationFiles.set(listOf(layout.projectDirectory.file("compose-stability.conf")))
 }
 
 licensee {
