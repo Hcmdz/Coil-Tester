@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.coiltester.app.constants.DetectionConstants
 import org.coiltester.app.di.AppRoute
 import org.coiltester.app.viewmodel.DetectionIntent
 import org.coiltester.app.viewmodel.DetectionViewModel
@@ -81,7 +82,7 @@ fun DetectionScreen(
                     when (state.status) {
                         DetectionStatus.DETECTING -> Color.Blue
                         DetectionStatus.CONFIRMED_AC -> Color.Green
-                        DetectionStatus.CONFIRMED_DC -> Color(0xFFFFA500)
+                        DetectionStatus.CONFIRMED_DC -> DetectionConstants.DC_DETECTION_COLOR
                         DetectionStatus.ERROR -> Color.Red
                         else -> Color.Gray
                     },

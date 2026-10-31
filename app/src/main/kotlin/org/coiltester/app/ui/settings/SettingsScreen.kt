@@ -53,6 +53,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.coiltester.app.BuildConfig
+import org.coiltester.app.constants.DetectionConstants
 import org.coiltester.app.di.AppRoute
 import org.coiltester.app.platform.SoundService
 import org.coiltester.app.viewmodel.SettingsIntent
@@ -136,7 +137,7 @@ fun SettingsSectionHeader(title: String) {
         style = MaterialTheme.typography.labelMedium,
         fontWeight = FontWeight.SemiBold,
         color = MaterialTheme.colorScheme.onSurfaceVariant,
-        letterSpacing = 0.5.sp,
+        letterSpacing = DetectionConstants.SECTION_LETTER_SPACING.sp,
         modifier =
             Modifier
                 .fillMaxWidth()
@@ -718,9 +719,13 @@ fun SettingsScreen(
             ) {
                 Column {
                     SettingItem(
-                        title = "Inject AC (0.5 µT)",
-                        subtitle = "Below AC threshold (0.5 µT) - circle should stop",
-                        onClick = { viewModel.sendIntent(SettingsIntent.InjectTestAc(0.5)) },
+                        title = "Inject AC (${DetectionConstants.INJECT_AC_LOW} µT)",
+                        subtitle = "Below AC threshold (${DetectionConstants.INJECT_AC_LOW} µT) - circle should stop",
+                        onClick = {
+                            viewModel.sendIntent(
+                                SettingsIntent.InjectTestAc(DetectionConstants.INJECT_AC_LOW),
+                            )
+                        },
                     )
                     SettingItem(
                         title = "Inject AC (5 µT)",
@@ -735,7 +740,11 @@ fun SettingsScreen(
                     SettingItem(
                         title = "Inject DC (150 µT)",
                         subtitle = "Above DC threshold (141 µT) - circle should rotate",
-                        onClick = { viewModel.sendIntent(SettingsIntent.InjectTestDc(150.0)) },
+                        onClick = {
+                            viewModel.sendIntent(
+                                SettingsIntent.InjectTestDc(DetectionConstants.INJECT_DC_HIGH),
+                            )
+                        },
                     )
                 }
             }

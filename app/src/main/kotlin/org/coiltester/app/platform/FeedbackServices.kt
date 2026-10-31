@@ -17,7 +17,7 @@ class HapticService(private val context: Context) {
     fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {
@@ -30,7 +30,7 @@ class HapticService(private val context: Context) {
     fun triggerCalibrationFeedback() {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
             val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
             vibrator.vibrate(effect)
         } else {

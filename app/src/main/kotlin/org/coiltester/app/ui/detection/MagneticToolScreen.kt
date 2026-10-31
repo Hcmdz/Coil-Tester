@@ -1,5 +1,6 @@
 package org.coiltester.app.ui.detection
 
+import org.coiltester.app.constants.DetectionConstants
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -191,7 +192,7 @@ fun MagneticToolScreen(
                                 size = Size(radius * 2, radius * 2),
                             )
                             drawArc(
-                                color = androidx.compose.ui.graphics.Color(0xFFFF3B30),
+                                color = DetectionConstants.ERROR_COLOR,
                                 startAngle = -90f,
                                 sweepAngle = 180f,
                                 useCenter = true,
@@ -199,7 +200,7 @@ fun MagneticToolScreen(
                                 size = Size(radius * 2, radius * 2),
                             )
                             drawCircle(
-                                color = androidx.compose.ui.graphics.Color(0xFFFF3B30),
+                                color = DetectionConstants.ERROR_COLOR,
                                 radius = radius,
                                 center = center,
                                 style = Stroke(width = 4.dp.toPx(), cap = StrokeCap.Round),
@@ -273,7 +274,7 @@ fun MagneticToolScreen(
                 elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
                 modifier =
                     Modifier
-                        .fillMaxWidth(0.7f)
+                        .fillMaxWidth(DetectionConstants.BUTTON_WIDTH_FRACTION)
                         .height(52.dp),
             ) {
                 Row(

@@ -1,5 +1,6 @@
 package org.coiltester.app.ui.navigation
 
+import org.coiltester.app.constants.DetectionConstants
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -38,8 +39,10 @@ fun AppNavHost(
             LaunchedEffect(hasHighField) {
                 if (hasHighField) {
                     while (true) {
-                        delay(16)
-                        rotation.value = (rotation.value + 2.88f) % 360f
+                        delay(DetectionConstants.FRAME_DELAY_MS)
+                        rotation.value =
+                            (rotation.value + DetectionConstants.ROTATION_INCREMENT_DEG) %
+                                DetectionConstants.FULL_ROTATION_DEG
                     }
                 } else {
                     rotation.value = 0f

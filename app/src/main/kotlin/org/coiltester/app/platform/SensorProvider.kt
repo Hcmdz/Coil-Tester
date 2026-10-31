@@ -1,5 +1,6 @@
 package org.coiltester.app.platform
 
+import org.coiltester.app.constants.DetectionConstants
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -121,7 +122,7 @@ class SensorProvider(private val context: Context) : DetectionRepository {
         if (acMagnitude > 0.0) {
             // Inject an oscillating 50 Hz signal so the band-pass can measure real AC.
             // 100 samples at 5 ms intervals = 500 ms = 25 cycles of 50 Hz.
-            val baseDc = 48.76 // Earth field baseline so the magnitude stays positive
+            val baseDc = DetectionConstants.INJECT_BASE_DC // Earth field baseline so the magnitude stays positive
             for (i in 0 until 100) {
                 val acComponent = acMagnitude * kotlin.math.sin(2 * Math.PI * 50 * i / 200.0)
                 val reading =
@@ -158,7 +159,7 @@ class SensorProvider(private val context: Context) : DetectionRepository {
 
     override fun getSupportedSamplingRates(): List<Int> {
         // 200 Hz is the smallest offered rate that can resolve a 50 Hz mains band.
-        return listOf(10, 20, 50, 64, 100, 200)
+        return listOf(10, DetectionConstants.SAMPLING_RATE_20, 50, DetectionConstants.SAMPLING_RATE_64, 100, 200)
     }
 
     override fun startSampling(config: DetectionConfig): Result<Unit, DetectionError> {
