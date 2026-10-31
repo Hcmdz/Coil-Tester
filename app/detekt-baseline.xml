@@ -14,16 +14,6 @@
     <ID>LongParameterList:DetectionViewModel.kt$DetectionViewModel$( private val detectionRepository: DetectionRepository, private val configureDetectionUseCase: ConfigureDetectionUseCase, private val stopDetectionUseCase: StopDetectionUseCase, private val calibrationUseCase: CalibrationUseCase, private val setSensitivityUseCase: SetSensitivityUseCase, private val soundService: SoundService, private val hapticService: HapticService, private val settingsRepository: SettingsRepository, private val scope: CoroutineScope, )</ID>
     <ID>LongParameterList:MagneticToolScreen.kt$( modifier: Modifier = Modifier, advancedOptionsEnabled: Boolean = false, distanceGuideEnabled: Boolean = true, soundEnabled: Boolean = true, hapticEnabled: Boolean = true, acValue: Double = 0.0, dcValue: Double = 24.0, acThreshold: Double = 3.0, dcThreshold: Double = 120.0, rotationDegrees: Float = 0f, isDetecting: Boolean = false, calibrationAccuracy: CalibrationAccuracy = CalibrationAccuracy.MEDIUM, onSettingsClick: () -&gt; Unit = {}, onAdvancedOptionsToggle: (Boolean) -&gt; Unit = {}, onSoundToggle: (Boolean) -&gt; Unit = {}, onHapticToggle: (Boolean) -&gt; Unit = {}, onAcThresholdChange: (Double) -&gt; Unit = {}, onDcThresholdChange: (Double) -&gt; Unit = {}, onToggleDetection: (Boolean) -&gt; Unit = {}, )</ID>
     <ID>LongParameterList:SettingsViewModel.kt$SettingsViewModel$( private val settingsRepository: SettingsRepository, private val setSensitivityUseCase: SetSensitivityUseCase, private val setLanguageUseCase: SetLanguageUseCase, private val setThemeUseCase: SetThemeUseCase, private val setAdvancedOptionsUseCase: SetAdvancedOptionsUseCase, private val setAcThresholdUseCase: SetAcThresholdUseCase, private val setDcThresholdUseCase: SetDcThresholdUseCase, private val setFrequencyBandUseCase: SetFrequencyBandUseCase, private val setSoundVolumeUseCase: SetSoundVolumeUseCase, private val sensorProvider: DetectionRepository, private val scope: kotlinx.coroutines.CoroutineScope, )</ID>
-    <ID>MagicNumber:DetectionScreen.kt$0xFFFFA500</ID>
-    <ID>MagicNumber:MagneticToolScreen.kt$0.7f</ID>
-    <ID>MagicNumber:MagneticToolScreen.kt$0xFFFF3B30</ID>
-    <ID>MagicNumber:Navigation.kt$16</ID>
-    <ID>MagicNumber:Navigation.kt$2.88f</ID>
-    <ID>MagicNumber:Navigation.kt$360f</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$20</ID>
-    <ID>MagicNumber:SensorProvider.kt$SensorProvider$64</ID>
-    <ID>MagicNumber:SettingsScreen.kt$0.5</ID>
-    <ID>MagicNumber:SettingsScreen.kt$150.0</ID>
     <ID>MaxLineLength:DetectionScreen.kt$DetectionStatus.CONFIRMED_AC -&gt; stringResource(org.coiltester.app.R.string.detection_ac_confirmed)</ID>
     <ID>MaxLineLength:DetectionScreen.kt$DetectionStatus.CONFIRMED_DC -&gt; stringResource(org.coiltester.app.R.string.detection_dc_confirmed)</ID>
     <ID>MaxLineLength:MagneticToolScreen.kt$Text("+", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)</ID>
