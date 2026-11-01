@@ -68,8 +68,8 @@ ksp {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        freeCompilerArgs += listOf(
+    compilerOptions {
+        freeCompilerArgs.addAll(
             "-Xopt-in=kotlin.RequiresOptIn",
             "-Xjsr305=strict"
         )
