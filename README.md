@@ -79,6 +79,10 @@ Real-time AC/DC magnetic field detection with status, distance guide, and contro
 - **Haptic and audio feedback** at detection, with adjustable volume and a calibration-complete cue.
 - **Distance guide** showing a 10 cm target to help position the sensor over the coil.
 
+### Why It Exists
+
+Testing solenoid coils in the field usually means carrying dedicated equipment. CoilTester puts a calibrated AC/DC magnetic-field detector in your pocket — real-time readings, instant haptic and audio feedback, and a guided distance target — so you can verify coil operation anywhere, fully offline.
+
 ### Calibration
 - **Sensor calibration** with stored offset/scale data and a reset option.
 - **Advanced options** for custom AC/DC thresholds and mains frequency band (50 / 60 Hz).
