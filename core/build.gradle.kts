@@ -7,35 +7,32 @@ plugins {
 
 android {
     namespace = "org.coiltester.core"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
-        targetSdk = 35
     }
 }
 
 kotlin {
     jvmToolchain(17)
-    targets {
-        jvm()
-        androidTarget()
-    }
+    jvm()
+    androidTarget()
     sourceSets {
-        val commonMain by getting {
+        named("commonMain") {
             dependencies {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.coroutines.android)
                 implementation(libs.kotlinx.serialization.json)
             }
         }
-        val jvmMain by getting {
+        named("jvmMain") {
             dependencies {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.serialization.json)
             }
         }
-        val jvmTest by getting {
+        named("jvmTest") {
             dependencies {
                 implementation(libs.junit.jupiter)
                 implementation(libs.junit.jupiter.params)
@@ -45,8 +42,7 @@ kotlin {
                 runtimeOnly(libs.junit.platform.launcher)
             }
         }
-        val androidMain by getting {
-            dependsOn(jvmMain)
+        named("androidMain") {
             dependencies {
                 implementation(libs.kotlinx.coroutines.android)
             }
