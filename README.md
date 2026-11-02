@@ -107,20 +107,20 @@ Exact versions from `gradle/libs.versions.toml`:
 
 | Category | Library | Version |
 |---|---|---|
-| **Build** | Android Gradle Plugin | 8.7.3 |
-| **Build** | Kotlin | 2.1.0 |
-| **Build** | KSP | 2.1.0-1.0.29 |
+| **Build** | Android Gradle Plugin | 9.5.0 |
+| **Build** | Kotlin | 2.3.21 |
+| **Build** | KSP | 2.3.13 |
 | **Build** | Gradle | 9.8.2 |
-| **UI** | Jetpack Compose (BOM) | 2025.06.01 |
-| **UI** | Material 3 | 1.3.1 (via BOM) |
-| **UI** | Activity Compose | 1.9.3 |
-| **UI** | Lifecycle / ViewModel | 2.8.7 |
-| **UI** | Navigation Compose | 2.8.5 |
-| **DI** | Koin | 4.0.0 |
-| **Database** | Room | 2.7.0 |
+| **UI** | Jetpack Compose (BOM) | 2026.09.00 |
+| **UI** | Material 3 | 1.4.0 (via BOM) |
+| **UI** | Activity Compose | 1.13.0 |
+| **UI** | Lifecycle / ViewModel | 2.11.0 |
+| **UI** | Navigation Compose | 2.10.2 |
+| **DI** | Koin | 4.2.2 |
+| **Database** | Room | 2.8.5 |
 | **Persistence** | DataStore (Preferences) | 1.3.0 |
-| **Async** | Kotlin Coroutines & Flow | 1.10.2 |
-| **Serialization** | kotlinx-serialization | 1.8.1 |
+| **Async** | Kotlin Coroutines & Flow | 1.11.0 |
+| **Serialization** | kotlinx-serialization | 1.12.0 |
 
 ### Security Features
 
@@ -129,7 +129,7 @@ Exact versions from `gradle/libs.versions.toml`:
 | Network security | Cleartext disabled (`android:usesCleartextTraffic="false"`, NSC), no `INTERNET` permission |
 | Backup disabled | `allowBackup="false"`, `data_extraction_rules.xml` / `backup_rules.xml` exclude Room DB and DataStore |
 | Minification | R8 full mode on release builds (`isMinifyEnabled = true`, `isShrinkResources = true`) |
-| Code quality | Detekt 1.23.8 + Ktlint 12.2.0 in CI |
+| Code quality | Detekt 1.23.8 + Ktlint 14.2.0 in CI |
 | Licensing | Licensee plugin gates dependencies (Apache-2.0 only) |
 
 ### Permissions

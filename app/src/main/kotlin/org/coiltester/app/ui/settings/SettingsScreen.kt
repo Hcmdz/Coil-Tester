@@ -133,7 +133,7 @@ fun SettingItem(
 @Composable
 fun SettingsSectionHeader(title: String) {
     Text(
-        text = title.uppercase(Locale.getDefault()),
+        text = title.uppercase(remember { Locale.getDefault() }),
         style = MaterialTheme.typography.labelMedium,
         fontWeight = FontWeight.SemiBold,
         color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -694,9 +694,10 @@ fun SettingsScreen(
                     }
                 }
                 settings.lastCalibrationAt?.let { time ->
+                    val locale = remember { Locale.getDefault() }
                     SettingItem(
                         title = stringResource(org.coiltester.app.R.string.settings_calibration_last),
-                        subtitle = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date(time)),
+                        subtitle = SimpleDateFormat("yyyy-MM-dd HH:mm", locale).format(Date(time)),
                     )
                 }
             }

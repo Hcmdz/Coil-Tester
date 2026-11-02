@@ -146,7 +146,7 @@ are emitted to `app/build/compose_compiler/`.
 ## 9. Quality gates
 
 - **Detekt** 1.23.7 — config `config/detekt/detekt.yml`, baseline `app/detekt-baseline.xml`.
-- **Ktlint** 12.2.0 — applied to `:app`.
+- **Ktlint** 14.2.0 — applied to `:app`.
 - **JaCoCo** 0.8.12 — HTML/XML reports.
 - CI: `.github/workflows/ci.yml` runs `test`, `lint`, `detekt`, `ktlintCheck`, `assembleDebug`.
 
