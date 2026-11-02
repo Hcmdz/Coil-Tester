@@ -7,14 +7,14 @@ import android.os.Vibrator
 /**
  * Haptic feedback service (simplified)
  */
-class HapticService(private val context: Context) {
+open class HapticService(private val context: Context) {
     @Volatile
     var enabled: Boolean = true
 
     private val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
     @Suppress("DEPRECATION", "java/deprecated-call", "UnusedParameter")
-    fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
+    open fun triggerDetectionFeedback(type: org.coiltester.core.model.DetectionType) {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
@@ -27,7 +27,7 @@ class HapticService(private val context: Context) {
     }
 
     @Suppress("DEPRECATION")
-    fun triggerCalibrationFeedback() {
+    open fun triggerCalibrationFeedback() {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
@@ -40,7 +40,7 @@ class HapticService(private val context: Context) {
     }
 
     @Suppress("DEPRECATION")
-    fun triggerErrorFeedback() {
+    open fun triggerErrorFeedback() {
         if (!enabled) return
         if (!vibrator.hasVibrator()) return
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -56,7 +56,7 @@ class HapticService(private val context: Context) {
 /**
  * Sound feedback service — plays short WAV cues from res/raw/.
  */
-class SoundService(private val context: Context) {
+open class SoundService(private val context: Context) {
     @Volatile
     var enabled: Boolean = true
 
@@ -80,7 +80,7 @@ class SoundService(private val context: Context) {
         }
     }
 
-    fun playDetectionSound(type: org.coiltester.core.model.DetectionType) {
+    open fun playDetectionSound(type: org.coiltester.core.model.DetectionType) {
         val resId =
             when (type) {
                 org.coiltester.core.model.DetectionType.AC -> org.coiltester.app.R.raw.detect_ac
@@ -89,11 +89,11 @@ class SoundService(private val context: Context) {
         play(resId)
     }
 
-    fun playCalibrationSound() {
+    open fun playCalibrationSound() {
         play(org.coiltester.app.R.raw.calibration_done)
     }
 
-    fun playErrorSound() {
+    open fun playErrorSound() {
         play(org.coiltester.app.R.raw.error)
     }
 

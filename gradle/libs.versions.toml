@@ -16,7 +16,9 @@ junit = "5.11.3"
 turbine = "1.2.1"
 assertk = "0.28.1"
 robolectric = "4.17"
-compose_ui_test = "1.7.5"
+compose_ui_test = "1.12.1"
+androidx_test_core = "1.7.0"
+espresso = "3.7.0"
 jacoco = "0.8.16"
 detekt = "1.23.8"
 ktlint = "14.2.0"
@@ -70,6 +72,8 @@ assertk = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assert
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 compose-ui-test = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose_ui_test" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose_ui_test" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidx_test_core" }
 robolectric-shadows = { module = "org.robolectric:shadows-multidex", version.ref = "robolectric" }
 truth = { module = "com.google.truth:truth", version = "1.1.7" }
 

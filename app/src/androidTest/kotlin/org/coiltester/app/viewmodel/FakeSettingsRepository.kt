@@ -11,6 +11,8 @@ class FakeSettingsRepository : SettingsRepository {
     private val _settings = MutableStateFlow(AppSettings())
     override val settings: StateFlow<AppSettings> = _settings
 
+    override suspend fun getSettings(): AppSettings = _settings.value
+
     override suspend fun updateSettings(transform: (AppSettings) -> AppSettings): Result<Unit, RepositoryError> {
         _settings.value = transform(_settings.value)
         return Result.Ok(Unit)

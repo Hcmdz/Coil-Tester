@@ -20,6 +20,7 @@ android {
         versionName = rootProject.extra["versionName"] as String
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testApplicationId = "org.coiltester.app"
     }
 
     buildFeatures {
@@ -127,6 +128,8 @@ dependencies {
 
     androidTestImplementation(libs.compose.ui.test)
     androidTestImplementation(libs.compose.ui.test.manifest)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.room.testing)
 }
 
