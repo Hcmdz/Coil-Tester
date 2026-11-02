@@ -27,6 +27,8 @@
 
 CoilTester — Clean-room rewrite of Magnetic Tool (Danfoss).
 
+Original app: [Magnetic Tool (Danfoss)](https://www.danfoss.com/en-us/service-and-support/downloads/dcs/magnetic-tool/#tab-overview)
+
 Coil detection, made measurable. CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
 
 <p align="center">
