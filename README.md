@@ -18,7 +18,7 @@
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg?logo=android)](https://www.android.com)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-purple.svg?logo=kotlin)](https://kotlinlang.org)
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](#)
-[![TargetSDK](https://img.shields.io/badge/TargetSDK-35-blue.svg)](#)
+[![TargetSDK](https://img.shields.io/badge/TargetSDK-37-blue.svg)](#)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Release](https://img.shields.io/github/v/release/Hcmdz/Coil-Tester)](https://github.com/Hcmdz/Coil-Tester/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/Hcmdz/Coil-Tester/total)](https://github.com/Hcmdz/Coil-Tester/releases)
