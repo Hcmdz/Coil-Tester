@@ -248,8 +248,8 @@ Current release APK size: measured in CI (see GitHub Releases for the published 
 
 ### v1.0.0
 - Initial release: AC/DC coil detection, calibration, distance guide, trilingual UI (FR/EN/AR), Material 3 theming.
-- Build: AGP 8.7.3, Kotlin 2.1.0, Compose BOM 2025.06.01, SDK 35.
-- Dependencies: Room 2.7.0, DataStore 1.3.0, Coroutines 1.10.2, kotlinx-serialization 1.8.1, Detekt 1.23.8, JaCoCo 0.8.15.
+- Build: AGP 9.5.0, Kotlin 2.3.21, Compose BOM 2026.09.00, SDK 37.
+- Dependencies: Room 2.8.5, DataStore 1.3.0, Coroutines 1.11.0, kotlinx-serialization 1.12.0, Detekt 1.23.8, JaCoCo 0.8.16, Koin 4.2.2, KSP 2.3.13.
 
 Full history in [GitHub Releases](https://github.com/Hcmdz/Coil-Tester/releases).
 
