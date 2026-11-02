@@ -7,7 +7,28 @@ All notable changes to CoilTester are documented in this file. Versions follow
 ## [Unreleased]
 
 ### Changed
-- Nothing yet.
+- Room 2.6.1 → 2.7.0
+- Coroutines 1.9.0 → 1.10.2
+- DataStore 1.1.1 → 1.3.0
+- kotlinx-serialization 1.7.3 → 1.8.1
+- Detekt 1.23.7 → 1.23.8
+- JaCoCo 0.8.12 → 0.8.15
+- Compose BOM 2024.12.01 → 2025.06.01
+- Gradle 8.13 → 9.8.2
+- Fullscreen immersive display enabled
+- Sensitivity dialog added to settings
+- Open source notices dialog added (Apache-2.0)
+- Test injection hidden in release builds (debug-only)
+- Calibration data fix: engine now updated with calibration
+- Config update fix: updateConfig now applies config
+- README aligned with ElecPilot format
+- Download badges added to README
+- Forks badge removed from README
+- Repo links fixed (HcmDz → Hcmdz, Coil_Tester → Coil-Tester)
+- DataStore (Proto) → (Preferences) label corrected
+- Author (HcmDZ) added to About section
+- Privacy/terms links added to About section
+- Source URL fixed (github.com/Hcmdz/Coil-Tester)
 
 ## [1.0.0] - 2026-10-28
 
