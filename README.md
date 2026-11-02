@@ -279,7 +279,7 @@ The application name "CoilTester", along with all original branding artwork, log
 - [x] JaCoCo coverage reporting
 - [x] CI/CD: CodeQL, secret scanning, quality gates
 - [x] GitHub Pages site and open-source notices
-- [ ] Compose UI tests (Robot pattern)
+- [x] Compose UI tests (Robot pattern)
 - [ ] Refactor long composables (DetectionScreen, MagneticToolScreen)
 - [ ] F-Droid / Play Store publication
 
