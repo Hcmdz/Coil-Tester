@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
             } catch (e: Exception) {
                 "fr"
             }
-        val newLocale = java.util.Locale(language)
+        val newLocale = java.util.Locale.forLanguageTag(language)
         val config = Configuration(context.resources.configuration)
         config.setLocale(newLocale)
         config.setLayoutDirection(newLocale)
