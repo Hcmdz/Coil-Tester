@@ -7,14 +7,18 @@ All notable changes to CoilTester are documented in this file. Versions follow
 ## [Unreleased]
 
 ### Changed
-- Room 2.6.1 → 2.7.0
-- Coroutines 1.9.0 → 1.10.2
+- AGP 8.7.3 → 9.5.0, Kotlin 2.1.0 → 2.3.21, KSP 2.1.0-1.0.29 → 2.3.13
+- Gradle 8.13 → 9.8.2, compileSdk 35 → 37
+- Room 2.6.1 → 2.8.5, Coroutines 1.9.0 → 1.11.0
 - DataStore 1.1.1 → 1.3.0
-- kotlinx-serialization 1.7.3 → 1.8.1
-- Detekt 1.23.7 → 1.23.8
-- JaCoCo 0.8.12 → 0.8.15
-- Compose BOM 2024.12.01 → 2025.06.01
-- Gradle 8.13 → 9.8.2
+- kotlinx-serialization 1.7.3 → 1.12.0
+- Compose BOM 2024.12.01 → 2026.09.00, Material 3 1.3.1 → 1.4.0
+- Activity Compose 1.9.3 → 1.13.0, Lifecycle 2.8.7 → 2.11.0
+- Navigation 2.8.5 → 2.10.2
+- Koin 4.0.0 → 4.2.2
+- Detekt 1.23.7 → 1.23.8, Ktlint 12.2.0 → 14.2.0
+- JaCoCo 0.8.12 → 0.8.16, Turbine 1.2.0 → 1.2.1
+- Robolectric 4.14.1 → 4.17
 - Fullscreen immersive display enabled
 - Sensitivity dialog added to settings
 - Open source notices dialog added (Apache-2.0)
@@ -23,12 +27,15 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - Config update fix: updateConfig now applies config
 - README aligned with ElecPilot format
 - Download badges added to README
-- Forks badge removed from README
 - Repo links fixed (HcmDz → Hcmdz, Coil_Tester → Coil-Tester)
 - DataStore (Proto) → (Preferences) label corrected
 - Author (HcmDZ) added to About section
 - Privacy/terms links added to About section
 - Source URL fixed (github.com/Hcmdz/Coil-Tester)
+- KSP configuration migrated to add("kspAndroid", ...) + add("kspJvm", ...)
+- Compose stability: stabilityConfigurationFile → stabilityConfigurationFiles
+- kotlinOptions → compilerOptions DSL migration
+- packagingOptions → packaging migration
 
 ## [1.0.0] - 2026-10-28
 
