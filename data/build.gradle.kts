@@ -8,43 +8,41 @@ plugins {
 
 android {
     namespace = "org.coiltester.data"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
-        targetSdk = 35
     }
 }
 
 kotlin {
     jvmToolchain(17)
-    targets {
-        jvm()
-        androidTarget()
-    }
+    jvm()
+    androidTarget()
     sourceSets {
-        val commonMain by getting {
+        named("commonMain") {
             dependencies {
                 implementation(project(":core"))
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.coroutines.android)
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.room.runtime)
+                implementation(libs.room.ktx)
                 implementation(libs.datastore.preferences)
             }
         }
-        val jvmMain by getting {
+        named("jvmMain") {
             dependencies {
                 implementation(project(":core"))
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.serialization.json)
             }
         }
-        val androidMain by getting {
-            dependsOn(jvmMain)
+        named("androidMain") {
             dependencies {
                 implementation(libs.kotlinx.coroutines.android)
                 implementation(libs.room.runtime)
+                implementation(libs.room.ktx)
             }
         }
     }
@@ -57,7 +55,8 @@ dependencies {
     testRuntimeOnly(libs.junit.jupiter)
     androidTestImplementation(libs.room.testing)
     androidTestImplementation(libs.robolectric)
-    ksp(libs.room.compiler)
+    add("kspAndroid", libs.room.compiler)
+    add("kspJvm", libs.room.compiler)
 }
 
 ksp {
@@ -71,13 +70,5 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
             "-Xopt-in=kotlin.RequiresOptIn",
             "-Xjsr305=strict"
         )
-    }
-}
-
-// Force kotlinx-serialization 1.9.0 on ksp configurations (Room 2.8.5 requires it)
-// The app runtime stays on 1.8.1 (no compiler plugin needed)
-configurations.all {
-    if (name.startsWith("ksp")) {
-        resolutionStrategy.force("org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0")
     }
 }
