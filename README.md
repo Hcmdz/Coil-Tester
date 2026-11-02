@@ -110,17 +110,17 @@ Exact versions from `gradle/libs.versions.toml`:
 | **Build** | Android Gradle Plugin | 8.7.3 |
 | **Build** | Kotlin | 2.1.0 |
 | **Build** | KSP | 2.1.0-1.0.29 |
-| **Build** | Gradle | 8.13 |
-| **UI** | Jetpack Compose (BOM) | 2024.12.01 |
+| **Build** | Gradle | 9.8.2 |
+| **UI** | Jetpack Compose (BOM) | 2025.06.01 |
 | **UI** | Material 3 | 1.3.1 (via BOM) |
 | **UI** | Activity Compose | 1.9.3 |
 | **UI** | Lifecycle / ViewModel | 2.8.7 |
 | **UI** | Navigation Compose | 2.8.5 |
 | **DI** | Koin | 4.0.0 |
-| **Database** | Room | 2.6.1 |
-| **Persistence** | DataStore (Preferences) | 1.1.1 |
-| **Async** | Kotlin Coroutines & Flow | 1.9.0 |
-| **Serialization** | kotlinx-serialization | 1.7.3 |
+| **Database** | Room | 2.7.0 |
+| **Persistence** | DataStore (Preferences) | 1.3.0 |
+| **Async** | Kotlin Coroutines & Flow | 1.10.2 |
+| **Serialization** | kotlinx-serialization | 1.8.1 |
 
 ### Security Features
 
@@ -129,7 +129,7 @@ Exact versions from `gradle/libs.versions.toml`:
 | Network security | Cleartext disabled (`android:usesCleartextTraffic="false"`, NSC), no `INTERNET` permission |
 | Backup disabled | `allowBackup="false"`, `data_extraction_rules.xml` / `backup_rules.xml` exclude Room DB and DataStore |
 | Minification | R8 full mode on release builds (`isMinifyEnabled = true`, `isShrinkResources = true`) |
-| Code quality | Detekt 1.23.7 + Ktlint 12.2.0 in CI |
+| Code quality | Detekt 1.23.8 + Ktlint 12.2.0 in CI |
 | Licensing | Licensee plugin gates dependencies (Apache-2.0 only) |
 
 ### Permissions
@@ -248,7 +248,8 @@ Current release APK size: measured in CI (see GitHub Releases for the published 
 
 ### v1.0.0
 - Initial release: AC/DC coil detection, calibration, distance guide, trilingual UI (FR/EN/AR), Material 3 theming.
-- Build: AGP 8.7.3, Kotlin 2.1.0, Compose BOM 2024.12.01, SDK 35.
+- Build: AGP 8.7.3, Kotlin 2.1.0, Compose BOM 2025.06.01, SDK 35.
+- Dependencies: Room 2.7.0, DataStore 1.3.0, Coroutines 1.10.2, kotlinx-serialization 1.8.1, Detekt 1.23.8, JaCoCo 0.8.15.
 
 Full history in [GitHub Releases](https://github.com/Hcmdz/Coil-Tester/releases).
 
