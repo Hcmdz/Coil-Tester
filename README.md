@@ -25,6 +25,8 @@
 [![Stars](https://img.shields.io/github/stars/Hcmdz/Coil-Tester)](https://github.com/Hcmdz/Coil-Tester/stargazers)
 [![Compose M3](https://img.shields.io/badge/Jetpack_Compose-Material_3-4285F4.svg?logo=jetpackcompose)](https://developer.android.com/jetpack/compose)
 
+CoilTester — Clean-room rewrite of Magnetic Tool (Danfoss).
+
 Coil detection, made measurable. CoilTester turns your phone's magnetometer into a calibrated coil-testing instrument: it reads AC and DC magnetic fields in real time, flags detected coils with haptic and audio feedback, and guides you to the right distance — all offline, with no account and no tracking.
 
 <p align="center">
