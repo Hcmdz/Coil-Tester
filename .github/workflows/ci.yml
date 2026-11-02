@@ -47,11 +47,9 @@ jobs:
 
       - name: Run detekt
         run: ./gradlew detekt --no-daemon --parallel
-        continue-on-error: true
 
       - name: Run ktlint
         run: ./gradlew ktlintCheck --no-daemon --parallel
-        continue-on-error: true
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --no-daemon --parallel
