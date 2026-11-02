@@ -28,6 +28,7 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - README aligned with ElecPilot format
 - Download badges added to README
 - Repo links fixed (HcmDz → Hcmdz, Coil_Tester → Coil-Tester)
+- Compose UI tests (Robot pattern) added (3 tests: showsReadyStatus, showsCalibrateButton, showsStartButton)
 - DataStore (Proto) → (Preferences) label corrected
 - Author (HcmDZ) added to About section
 - Privacy/terms links added to About section
