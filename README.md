@@ -274,9 +274,11 @@ The application name "CoilTester", along with all original branding artwork, log
 
 ## 🗺️ Roadmap
 
-- [x] Dependency upgrade to AGP 8.7 / Kotlin 2.1 / Compose BOM 2024.12
-- [x] Detekt + Ktlint quality gates activated
+- [x] Dependency upgrade to AGP 9.5 / Kotlin 2.3 / Compose BOM 2026.09
+- [x] Detekt + Ktlint quality gates activated (blocking)
 - [x] JaCoCo coverage reporting
+- [x] CI/CD: CodeQL, secret scanning, quality gates
+- [x] GitHub Pages site and open-source notices
 - [ ] Compose UI tests (Robot pattern)
 - [ ] Refactor long composables (DetectionScreen, MagneticToolScreen)
 - [ ] F-Droid / Play Store publication
