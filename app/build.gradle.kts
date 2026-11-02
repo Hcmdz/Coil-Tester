@@ -113,7 +113,6 @@ dependencies {
 
     // Room
     implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
 
     // DataStore
     implementation(libs.datastore.preferences)
