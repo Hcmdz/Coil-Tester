@@ -16,7 +16,7 @@ pluginManagement {
                 useModule("org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.3.21")
             }
             if (requested.id.id == "com.google.devtools.ksp") {
-                useModule("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.3.12")
+                useModule("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.3.13")
             }
         }
     }
