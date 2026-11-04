@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.jacoco)
-    id("app.cash.licensee") version "1.13.0"
+    id("app.cash.licensee") version "1.14.1"
 }
 
 android {
