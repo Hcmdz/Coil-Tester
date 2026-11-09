@@ -10,7 +10,7 @@ pluginManagement {
                 useModule("com.android.tools.build:gradle:9.5.0")
             }
             if (requested.id.id == "org.jetbrains.kotlin.android" || requested.id.id == "org.jetbrains.kotlin.multiplatform") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.21")
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.20")
             }
             if (requested.id.id == "org.jetbrains.kotlin.plugin.compose") {
                 useModule("org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.3.21")
