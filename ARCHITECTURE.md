@@ -118,7 +118,7 @@ DataStore (Proto) ←→ SettingsRepository ←→ SettingsViewModel ←→ Sett
 - Material You dynamic color (light/dark/pure-black AMOLED).
 - Adaptive layouts for phone and tablet.
 - Edge-to-edge with `WindowInsets`.
-- `FLAG_SECURE` on the detection screen.
+- Detection screen (no FLAG_SECURE — app has no sensitive PII, screenshots allowed).
 - Trilingual: `values/` (FR default), `values-en/`, `values-ar/` (RTL, `supportsRtl=true`).
 
 ### Compose stability

@@ -49,7 +49,7 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - Advanced options: custom AC/DC thresholds and mains frequency band (50 / 60 Hz).
 - Trilingual UI: French (default), English, Arabic with full RTL support.
 - Theme support: Light, Dark, Pure Black (AMOLED), or follow system.
-- `FLAG_SECURE` on the detection screen to prevent screenshots/screen recording.
+- Detection screen (screenshots allowed — no sensitive PII).
 - Multi-module Clean Architecture + MVI: `:app`, `:core` (KMP), `:data`, `:build-logic:convention`.
 - Detekt 1.23.7 and Ktlint 12.2.0 quality gates in CI.
 - JaCoCo coverage reporting (`./gradlew :app:jacocoTestReport`).
@@ -76,7 +76,7 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - `allowBackup="false"`; Room DB and DataStore excluded from backup.
 - Cleartext traffic disabled; network security config in place.
 - R8 full mode + resource shrinking on release builds.
-- `FLAG_SECURE` on the detection screen.
+- Detection screen (screenshots allowed — no sensitive PII).
 - Gitleaks pre-push gate for secrets GitHub push protection misses.
 
 ### Build
