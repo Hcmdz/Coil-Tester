@@ -129,6 +129,8 @@ Exact versions from `gradle/libs.versions.toml`:
 | **Persistence** | DataStore (Preferences) | 1.3.0 |
 | **Async** | Kotlin Coroutines & Flow | 1.11.0 |
 | **Serialization** | kotlinx-serialization | 1.12.0 |
+| **Testing** | Truth | 1.4.5 |
+| **Licensing** | Licensee | 1.14.1 |
 
 ### Security Features
 
@@ -154,7 +156,7 @@ Entry points: `CoilTesterApplication` (Application), `MainActivity` (launcher).
 
 ### CI & Quality
 
-- GitHub Actions: `.github/workflows/ci.yml` (`test` + `lint` + `detekt` + `ktlintCheck` + `assembleDebug`), `.github/workflows/release.yml` (on `v*` tag: signed AAB + GitHub Release), `.github/workflows/secret-scan.yml`.
+- GitHub Actions: `.github/workflows/ci.yml` (`test` + `lint` + `detekt` + `ktlintCheck` + `assembleDebug`), `.github/workflows/deploy.yml` (signed APK+AAB on tag push), `.github/workflows/release.yml` (GitHub Release on `v*` tag), `.github/workflows/secret-scan.yml`, `.github/workflows/validate.yml` (secret gate), `.github/workflows/codeql.yml` (CodeQL analysis).
 - Detekt: `./gradlew detekt` (config `config/detekt/detekt.yml`, baseline `app/detekt-baseline.xml`).
 - Ktlint: `./gradlew ktlintCheck` / `ktlintFormat` (plugin applied to `:app`).
 - CI/Deployment inventory: `KEYSTORE_FILE`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD` (GitHub Secrets).
@@ -224,7 +226,7 @@ CoilTester/
 ├── data/                         # Room entities/DAOs, DataStore prefs, repository impls
 ├── build-logic/convention/       # Gradle convention plugins
 ├── config/detekt/                # Detekt configuration
-└── .github/workflows/            # CI/CD (ci.yml, release.yml, secret-scan.yml)
+└── .github/workflows/            # CI/CD (ci.yml, deploy.yml, release.yml, secret-scan.yml, validate.yml, codeql.yml)
 ```
 
 ---
@@ -288,6 +290,13 @@ The application name "CoilTester", along with all original branding artwork, log
 - [x] CI/CD: CodeQL, secret scanning, quality gates
 - [x] GitHub Pages site and open-source notices
 - [x] Compose UI tests (Robot pattern)
+- [x] Dependency upgrade to AGP 9.5 / Kotlin 2.3 / Compose BOM 2026.09
+- [x] Detekt + Ktlint quality gates activated (blocking)
+- [x] JaCoCo coverage reporting
+- [x] CI/CD: CodeQL, secret scanning, quality gates
+- [x] GitHub Pages site and open-source notices
+- [x] Release workflows (deploy.yml + release.yml)
+- [x] All Dependabot alerts resolved (dismissed + resolution strategies)
 - [ ] Refactor long composables (DetectionScreen, MagneticToolScreen)
 - [ ] F-Droid / Play Store publication
 

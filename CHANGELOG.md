@@ -37,7 +37,14 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - Compose stability: stabilityConfigurationFile → stabilityConfigurationFiles
 - kotlinOptions → compilerOptions DSL migration
 - packagingOptions → packaging migration
-
+- Truth 1.1.7 → 1.4.5, licensee 1.13.0 → 1.14.1, JUnit 5.11.3 → 6.1.3
+- KSP 2.3.12 → 2.3.13 (settings.gradle.kts alignment)
+- Resolution strategies added for 9 transitive plugin deps (bouncycastle, logback, plexus-utils, jdom2, httpclient, jose4j, commons-lang3, guava)
+- Gradle build cache disabled (CVE-2026-53914 defense-in-depth)
+- Deploy + release workflows added (SHA-pinned, apksigner verify)
+- CodeQL alerts #8-10 dismissed (deprecated Vibrator.vibrate, SDK_INT guarded)
+- All 16 Dependabot alerts dismissed (build-time only, versions forced)
+- FLAG_SECURE removed from docs (not needed — no sensitive PII)
 ## [1.0.0] - 2026-10-28
 
 ### Added
