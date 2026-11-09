@@ -107,14 +107,14 @@ DataStore (Proto) ←→ SettingsRepository ←→ SettingsViewModel ←→ Sett
 
 ## 5. Database
 
-- **Room** 2.6.1, `exportSchema = true`, schemas in `data/schemas/`.
+- **Room** 2.8.5, `exportSchema = true`, schemas in `data/schemas/`.
 - Pre-packaged database via `createFromAsset()` (`app/src/main/assets/databases/`).
 - Migrations are additive only (never edit a shipped migration).
 - DAOs use `suspend` functions and `Flow` for reactive queries.
 
 ## 6. UI / Compose
 
-- Jetpack Compose + Material 3 (BOM 2024.12.01).
+- Jetpack Compose + Material 3 (BOM 2026.09.00).
 - Material You dynamic color (light/dark/pure-black AMOLED).
 - Adaptive layouts for phone and tablet.
 - Edge-to-edge with `WindowInsets`.
@@ -145,9 +145,9 @@ are emitted to `app/build/compose_compiler/`.
 
 ## 9. Quality gates
 
-- **Detekt** 1.23.7 — config `config/detekt/detekt.yml`, baseline `app/detekt-baseline.xml`.
+- **Detekt** 1.23.8 — config `config/detekt/detekt.yml`, baseline `app/detekt-baseline.xml`.
 - **Ktlint** 14.2.0 — applied to `:app`.
-- **JaCoCo** 0.8.12 — HTML/XML reports.
+- **JaCoCo** 0.8.16 — HTML/XML reports.
 - CI: `.github/workflows/ci.yml` runs `test`, `lint`, `detekt`, `ktlintCheck`, `assembleDebug`.
 
 ## 10. Security
