@@ -7,8 +7,8 @@ All notable changes to CoilTester are documented in this file. Versions follow
 ## [Unreleased]
 
 ### Changed
-- AGP 8.7.3 → 9.5.0, Kotlin 2.1.0 → 2.3.21, KSP 2.1.0-1.0.29 → 2.3.13
-- Gradle 8.13 → 9.8.2, compileSdk 35 → 37
+- AGP 8.7.3 → 9.5.1, Kotlin 2.1.0 → 2.3.21, KSP 2.1.0-1.0.29 → 2.3.13
+- Gradle 8.13 → 9.9.0, compileSdk 35 → 37
 - Room 2.6.1 → 2.8.5, Coroutines 1.9.0 → 1.11.0
 - DataStore 1.1.1 → 1.3.0
 - kotlinx-serialization 1.7.3 → 1.12.0

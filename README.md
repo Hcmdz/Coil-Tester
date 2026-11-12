@@ -115,10 +115,10 @@ Exact versions from `gradle/libs.versions.toml`:
 
 | Category | Library | Version |
 |---|---|---|
-| **Build** | Android Gradle Plugin | 9.5.0 |
+| **Build** | Android Gradle Plugin | 9.5.1 |
 | **Build** | Kotlin | 2.3.21 |
 | **Build** | KSP | 2.3.13 |
-| **Build** | Gradle | 9.8.2 |
+| **Build** | Gradle | 9.9.0 |
 | **UI** | Jetpack Compose (BOM) | 2026.09.00 |
 | **UI** | Material 3 | 1.4.0 (via BOM) |
 | **UI** | Activity Compose | 1.13.0 |

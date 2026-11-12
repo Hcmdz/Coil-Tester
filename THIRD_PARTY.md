@@ -5,7 +5,7 @@ by their authors; verify the exact terms in each project's repository.
 
 ## AndroidX / Jetpack (Apache License 2.0)
 
-- Android Gradle Plugin 9.5.0
+- Android Gradle Plugin 9.5.1
 - Jetpack Compose (BOM 2026.09.00) — ui, foundation, runtime, material3, material3-adaptive, navigation-compose
 - Activity Compose 1.13.0
 - Lifecycle / ViewModel 2.11.0
