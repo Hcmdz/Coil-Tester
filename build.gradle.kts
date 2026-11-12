@@ -23,7 +23,7 @@ allprojects {
                 "org.jdom:jdom2:2.0.6.1",
                 "org.apache.httpcomponents:httpclient:4.5.13",
                 "org.bitbucket.b_c:jose4j:0.9.6",
-                "org.apache.commons:commons-lang3:3.18.0",
+                "org.apache.commons:commons-lang3:3.21.0",
                 "com.google.guava:guava:33.8.0-jre"
             )
         }
