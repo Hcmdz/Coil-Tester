@@ -17,7 +17,7 @@ allprojects {
         resolutionStrategy {
             force(
                 "org.bouncycastle:bcprov-jdk18on:1.85",
-                "org.bouncycastle:bcpkix-jdk18on:1.84",
+                "org.bouncycastle:bcpkix-jdk18on:1.86",
                 "ch.qos.logback:logback-core:1.5.34",
                 "org.codehaus.plexus:plexus-utils:3.6.1",
                 "org.jdom:jdom2:2.0.6.1",
