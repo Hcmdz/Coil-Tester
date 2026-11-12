@@ -19,7 +19,7 @@ allprojects {
                 "org.bouncycastle:bcprov-jdk18on:1.85",
                 "org.bouncycastle:bcpkix-jdk18on:1.84",
                 "ch.qos.logback:logback-core:1.5.34",
-                "org.codehaus.plexus:plexus-utils:3.6.1",
+                "org.codehaus.plexus:plexus-utils:4.1.0",
                 "org.jdom:jdom2:2.0.6.1",
                 "org.apache.httpcomponents:httpclient:4.5.13",
                 "org.bitbucket.b_c:jose4j:0.9.6",
