@@ -7,6 +7,13 @@ updates:
     open-pull-requests-limit: 10
     reviewers:
       - "HcmDz"
+    groups:
+      gradle-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -15,3 +22,15 @@ updates:
     open-pull-requests-limit: 5
     reviewers:
       - "HcmDz"
+    groups:
+      codeql:
+        patterns:
+          - "github/codeql-action*"
+      actions-minor-patch:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "github/codeql-action*"
+        update-types:
+          - "minor"
+          - "patch"
