@@ -7,6 +7,11 @@ updates:
     open-pull-requests-limit: 10
     reviewers:
       - "HcmDz"
+    ignore:
+      - dependency-name: "org.jetbrains.kotlin*"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
     groups:
       gradle-minor-patch:
         patterns:
