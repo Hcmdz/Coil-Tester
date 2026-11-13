@@ -20,3 +20,12 @@ privately rather than opening a public issue.
 
 Please do not include exploit code in the initial report. Provide steps to reproduce and
 the affected version.
+
+## Build-time hardening
+
+- The Gradle build cache is disabled (`org.gradle.caching=false` in `gradle.properties`)
+  as defense-in-depth against CVE-2026-53914 (unsafe deserialization in the Kotlin
+  build cache, affecting `org.jetbrains.kotlin:kotlin-gradle-plugin` < 2.4.20-Beta1).
+- The project targets Kotlin 2.3.21; upgrading to the patched 2.4.20-Beta1+ would
+  require a matching KSP release and is not currently planned. The vulnerability is
+  build-time only and fully mitigated by disabling the cache.
