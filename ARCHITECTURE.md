@@ -1,7 +1,7 @@
 # Architecture — CoilTester
 
 This document describes the architecture of CoilTester. It complements
-[README.md](README.md) and [AGENTS.md](AGENTS.md).
+[README.md](README.md).
 
 ## 1. Overview
 
@@ -35,7 +35,7 @@ Constraint: `:core` never depends on the Android SDK. Testable on JVM.
 ### :data (KMP + Room)
 
 - **db/** — Room entities, DAOs, `CoilTesterDatabase`, type converters.
-- **prefs/** — DataStore (Proto) for settings.
+- **prefs/** — DataStore (Preferences) for settings.
 - **repository/** — repository implementations (Room + DataStore).
 - **embedded/** — build-time DB generator (CSV → `assets/databases/`).
 
@@ -79,7 +79,7 @@ blocks for cleanup).
 
 ### Dependency injection
 
-Koin 4.0.0. Modules are split by concern:
+Koin 4.2.2. Modules are split by concern:
 - `coreModule` — use cases, domain services.
 - `dataModule` — repositories, Room database, DataStore.
 - `platformModule` — sensor, haptic, sound, permissions.
@@ -102,7 +102,7 @@ Compose UI (collectAsStateWithLifecycle)
 Settings flow:
 
 ```
-DataStore (Proto) ←→ SettingsRepository ←→ SettingsViewModel ←→ SettingsScreen
+DataStore (Preferences) ←→ SettingsRepository ←→ SettingsViewModel ←→ SettingsScreen
 ```
 
 ## 5. Database
@@ -132,7 +132,7 @@ are emitted to `app/build/compose_compiler/`.
 
 - Kotlin Coroutines + `StateFlow` / `SharedFlow`.
 - `SupervisorJob` for scoped failure isolation.
-- `UnconfinedTestDispatcher` in tests (JUnit5 + Turbine).
+- `StandardTestDispatcher` in ViewModel tests (JUnit5 + Turbine).
 
 ## 8. Testing
 
@@ -156,7 +156,7 @@ are emitted to `app/build/compose_compiler/`.
 - `android:usesCleartextTraffic="false"`, network security config.
 - `allowBackup="false"`; data extraction rules exclude DB and DataStore.
 - R8 full mode + resource shrinking on release.
-- Encrypted DataStore (Proto) for settings.
+- DataStore (Preferences) for settings.
 
 ## 11. Build & release
 

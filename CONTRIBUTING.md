@@ -13,7 +13,7 @@ Thanks for your interest. CoilTester is an offline-first Android app; contributi
 
 - Android Studio latest stable
 - JDK 17+
-- Android SDK 35+ (compileSdk 35)
+- Android SDK 37+ (compileSdk 37)
 - Device or emulator running Android 7.0+ (minSdk 24)
 
 ## Build

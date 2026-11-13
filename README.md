@@ -18,7 +18,7 @@
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg?logo=android)](https://www.android.com)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-purple.svg?logo=kotlin)](https://kotlinlang.org)
 [![MinSDK](https://img.shields.io/badge/MinSDK-24-orange.svg)](#)
-[![TargetSDK](https://img.shields.io/badge/TargetSDK-37-blue.svg)](#)
+[![TargetSDK](https://img.shields.io/badge/TargetSDK-35-blue.svg)](#)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Release](https://img.shields.io/github/v/release/Hcmdz/Coil-Tester?label=Release&color=00D117)](https://github.com/Hcmdz/Coil-Tester/releases)
 [![Downloads](https://img.shields.io/github/downloads/Hcmdz/Coil-Tester/total)](https://github.com/Hcmdz/Coil-Tester/releases)
@@ -48,10 +48,10 @@ Coil detection, made measurable. CoilTester turns your phone's magnetometer into
 
 [![GitHub](https://img.shields.io/badge/Get_it_on-GitHub-black.svg?logo=github)](https://github.com/Hcmdz/Coil-Tester/releases/latest)
 
-GitHub sideloading: **[Latest release](https://github.com/Hcmdz/Coil-Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.7 MB, universal).
+GitHub sideloading: **[Latest release](https://github.com/Hcmdz/Coil-Tester/releases/latest)** (`CoilTester-release.v1.0.0.apk`, ~2.9 MB, universal).
 
 - Requires Android 7.0+ (API 24).
-- Verify integrity: `sha256sum -c CoilTester-release.apk.sha256` (sidecar next to the APK).
+- Verify integrity: `sha256sum -c CoilTester-release.v1.0.0.apk.sha256` (sidecar next to the APK).
 - ⚠️ If a release ever changes signing key, document it here: back up, uninstall, install, restore (Android refuses updates across certificates).
 
 ---
@@ -258,7 +258,7 @@ Current release APK size: measured in CI (see GitHub Releases for the published 
 
 ### v1.0.0
 - Initial release: AC/DC coil detection, calibration, distance guide, trilingual UI (FR/EN/AR), Material 3 theming.
-- Build: AGP 9.5.0, Kotlin 2.3.21, Compose BOM 2026.09.00, SDK 37.
+- Build: AGP 9.5.0, Kotlin 2.3.21, Compose BOM 2026.09.00, compileSdk 37.
 - Dependencies: Room 2.8.5, DataStore 1.3.0, Coroutines 1.11.0, kotlinx-serialization 1.12.0, Detekt 1.23.8, JaCoCo 0.8.16, Koin 4.2.2, KSP 2.3.13.
 
 Full history in [GitHub Releases](https://github.com/Hcmdz/Coil-Tester/releases).
@@ -288,13 +288,8 @@ The application name "CoilTester", along with all original branding artwork, log
 - [x] Detekt + Ktlint quality gates activated (blocking)
 - [x] JaCoCo coverage reporting
 - [x] CI/CD: CodeQL, secret scanning, quality gates
-- [x] GitHub Pages site and open-source notices
 - [x] Compose UI tests (Robot pattern)
-- [x] Dependency upgrade to AGP 9.5 / Kotlin 2.3 / Compose BOM 2026.09
-- [x] Detekt + Ktlint quality gates activated (blocking)
-- [x] JaCoCo coverage reporting
-- [x] CI/CD: CodeQL, secret scanning, quality gates
-- [x] GitHub Pages site and open-source notices
+- [x] Open-source notices
 - [x] Release workflows (deploy.yml + release.yml)
 - [x] All Dependabot alerts resolved (dismissed + resolution strategies)
 - [ ] Refactor long composables (DetectionScreen, MagneticToolScreen)
