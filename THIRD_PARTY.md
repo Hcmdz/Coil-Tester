@@ -11,7 +11,6 @@ by their authors; verify the exact terms in each project's repository.
 - Lifecycle / ViewModel 2.11.0
 - Room 2.8.5
 - DataStore 1.3.0
-- Core KTX, AppCompat
 
 ## Kotlin (Apache License 2.0)
 
@@ -26,11 +25,11 @@ by their authors; verify the exact terms in each project's repository.
 
 ## Testing (various)
 
-- JUnit Jupiter 5.11.3 (Eclipse Public License 2.0)
+- JUnit Jupiter 6.1.3 (Eclipse Public License 2.0)
 - Turbine 1.2.1 (Apache License 2.0)
 - AssertK 0.28.1 (Apache License 2.0)
 - Robolectric 4.17 (MIT License)
-- Truth 1.1.7 (Apache License 2.0)
+- Truth 1.4.5 (Apache License 2.0)
 - Compose UI Test 1.12.1 (Apache License 2.0)
 
 ## Code quality (build-time only)

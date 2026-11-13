@@ -43,8 +43,12 @@ All notable changes to CoilTester are documented in this file. Versions follow
 - Gradle build cache disabled (CVE-2026-53914 defense-in-depth)
 - Deploy + release workflows added (SHA-pinned, apksigner verify)
 - CodeQL alerts #8-10 dismissed (deprecated Vibrator.vibrate, SDK_INT guarded)
-- All 16 Dependabot alerts dismissed (build-time only, versions forced)
+- Dependabot alerts: 9 dismissed, 7 fixed (0 open)
 - FLAG_SECURE removed from docs (not needed — no sensitive PII)
+- AGP 9.5.0 → 9.5.1, Gradle 9.8.2 → 9.9.0 (build script, catalog and settings aligned)
+- Compose robot assertions now resolve string resources (locale-safe, no hardcoded English)
+- Dependency updates grouped: codeql init+analyze move together; gradle/actions minor+patch collapsed
+
 ## [1.0.0] - 2026-10-28
 
 ### Added
