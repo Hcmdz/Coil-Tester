@@ -4,22 +4,6 @@ pluginManagement {
         google()
         maven { url = uri("https://repo1.maven.org/maven2") }
     }
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "com.android.application" || requested.id.id == "com.android.library") {
-                useModule("com.android.tools.build:gradle:9.5.1")
-            }
-            if (requested.id.id == "org.jetbrains.kotlin.android" || requested.id.id == "org.jetbrains.kotlin.multiplatform") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.21")
-            }
-            if (requested.id.id == "org.jetbrains.kotlin.plugin.compose") {
-                useModule("org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin:2.3.21")
-            }
-            if (requested.id.id == "com.google.devtools.ksp") {
-                useModule("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.3.13")
-            }
-        }
-    }
 }
 
 dependencyResolutionManagement {
